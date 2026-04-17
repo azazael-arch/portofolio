@@ -6,16 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christopher Juan Macrio | Web Developer & UI/UX Designer</title>
 
-    <!-- SEO Meta Tags -->
-    <meta name="description"
-        content="Portfolio of Christopher Juan Macrio, Web Developer & UI/UX Designer based in Yogyakarta. Explore my experience, projects, and skills.">
+    <!-- SEO & Performance Meta Tags -->
+    <meta name="description" content="Portfolio of Christopher Juan Macrio, Web Developer & UI/UX Designer based in Yogyakarta. Explore my experience, projects, and skills.">
     <meta name="keywords" content="Christopher Juan Macrio, Web Developer, UI/UX Designer, Portfolio, Yogyakarta, UGM">
+    <meta name="author" content="Christopher Juan Macrio">
+    <meta name="theme-color" content="#06060a">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Christopher Juan Macrio | Web Developer & UI/UX Designer">
+    <meta property="og:description" content="Menggabungkan logika matematika dengan desain kreatif untuk membangun solusi digital yang elegan dan berdampak.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cjuanmacrio.com">
+    <meta property="og:image" content="https://cjuanmacrio.com/og-image.jpg">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
 
     <!-- Animations -->
@@ -29,46 +37,94 @@
 </head>
 
 <body class="bg-noise">
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <span class="logo logo-preloader">CJM<span>.</span></span>
+            <div class="loading-bar"><div class="loading-progress"></div></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">CJM<span>.</span></a>
-            <div class="nav-links">
-                <a href="#about">Tentang</a>
-                <a href="#experience">Pengalaman</a>
-                <a href="#education">Pendidikan</a>
-                <a href="#skills">Keahlian</a>
-                <a href="#projects">Portofolio</a>
+            <div class="nav-links" id="navLinks">
+                <a href="#about" data-section="about">Tentang</a>
+                <a href="#experience" data-section="experience">Pengalaman</a>
+                <a href="#education" data-section="education">Pendidikan</a>
+                <a href="#skills" data-section="skills">Keahlian</a>
+                <a href="#projects" data-section="projects">Portofolio</a>
             </div>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=cjuanmacrio06@gmail.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline nav-contact">Hubungi Saya</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=cjuanmacrio06@gmail.com" target="_blank"
+                rel="noopener noreferrer" class="btn btn-outline nav-contact">Hubungi Saya</a>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about">Tentang</a>
+        <a href="#experience">Pengalaman</a>
+        <a href="#education">Pendidikan</a>
+        <a href="#skills">Keahlian</a>
+        <a href="#projects">Portofolio</a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=cjuanmacrio06@gmail.com" target="_blank"
+            rel="noopener noreferrer">Hubungi Saya</a>
+    </div>
 
     <!-- Custom Cursor -->
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
-    <main>
-        <!-- Hero Section -->
+    <main id="main-content">
+        <!-- Background Blobs -->
+        <div class="bg-blob blob-1"></div>
+        <div class="bg-blob blob-2"></div>
+        <div class="bg-blob blob-3"></div>
+
+        <!-- ====== HERO SECTION ====== -->
         <header class="section hero" id="home">
+            <canvas id="particles-canvas"></canvas>
             <div class="hero-bg-glow"></div>
+            <div class="hero-bg-glow-2"></div>
+
             <div class="container hero-content">
-                <p class="hero-subtitle mb-4" data-aos="fade-down">Halo, saya</p>
-                <h1 class="hero-title glitch" data-aos="fade-up" data-title="Christopher Juan Macrio">
+                <div class="hero-status" data-aos="fade-down">
+                    <div class="status-dot"></div>
+                    <span>Open to Opportunities</span>
+                </div>
+
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="50">Halo, saya</p>
+
+                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
                     <span class="text-gradient">Christopher Juan</span><br>Macrio
                 </h1>
-                <p class="hero-role mt-4" data-aos="fade-up" data-aos-delay="100">
-                    Web Developer & UI/UX Designer
+
+                <p class="hero-role" data-aos="fade-up" data-aos-delay="150">
+                    <span id="typingText"></span><span class="typing-cursor"></span>
                 </p>
 
-                <div class="hero-contact-info mt-8" data-aos="fade-up" data-aos-delay="200">
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
+                    Menggabungkan logika matematika dengan desain kreatif untuk membangun solusi digital yang elegan dan berdampak.
+                </p>
+
+                <div class="hero-contact-info" data-aos="fade-up" data-aos-delay="250">
                     <div class="contact-item">
                         <i data-lucide="map-pin"></i>
                         <span>Yogyakarta, Indonesia</span>
                     </div>
                     <div class="contact-item">
                         <i data-lucide="mail"></i>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=cjuanmacrio06@gmail.com" target="_blank" rel="noopener noreferrer">cjuanmacrio06@gmail.com</a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=cjuanmacrio06@gmail.com" target="_blank"
+                            rel="noopener noreferrer">cjuanmacrio06@gmail.com</a>
                     </div>
                     <div class="contact-item">
                         <i data-lucide="phone"></i>
@@ -76,7 +132,7 @@
                     </div>
                 </div>
 
-                <div class="hero-actions mt-12" data-aos="fade-up" data-aos-delay="300">
+                <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
                     <a href="#experience" class="btn btn-primary">Lihat Perjalanan Saya <i data-lucide="arrow-right"
                             class="ml-2 icon-sm"></i></a>
                     <a href="#projects" class="btn btn-glass">Lihat Project</a>
@@ -87,15 +143,70 @@
                 <div class="mouse">
                     <div class="wheel"></div>
                 </div>
-                <div class="arrow"></div>
             </div>
         </header>
 
-        <!-- Experience Section -->
-        <section class="section" id="experience">
+        <!-- ====== ABOUT SECTION ====== -->
+        <div class="section-divider"></div>
+        <section class="section" id="about">
             <div class="container">
                 <div class="section-header" data-aos="fade-right">
-                    <h2 class="section-title">Pengalaman Kerja</h2>
+                    <div>
+                        <p class="section-label">Perkenalan</p>
+                        <h2 class="section-title">Tentang Saya</h2>
+                    </div>
+                    <div class="line"></div>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-text" data-aos="fade-up">
+                        <p>
+                            Saya adalah seorang <strong class="text-white">Web Developer</strong> dan <strong class="text-white">UI/UX Designer</strong> 
+                            berbasis di Yogyakarta, dengan passion kuat terhadap teknologi dan desain visual.
+                        </p>
+                        <p>
+                            Dengan pengalaman memimpin tim produksi teknis dan proyek pengembangan perangkat lunak, saya terbiasa 
+                            mengoordinasikan workflow kompleks dan menghasilkan output berkualitas tinggi. Saya percaya bahwa 
+                            <strong class="text-white">kode yang baik</strong> harusnya seindah desainnya.
+                        </p>
+                        <p>
+                            Saat ini saya telah diterima di <strong class="text-white">Universitas Gadjah Mada (UGM)</strong> untuk 
+                            program S1 Matematika Murni melalui jalur <strong class="text-gradient">SNBP 2026</strong>, di mana saya 
+                            akan mendalami logika matematika dan algoritma yang memperkuat fondasi saya dalam dunia teknologi.
+                        </p>
+                    </div>
+
+                    <div class="about-stats" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stat-card">
+                            <div class="stat-number" data-count="2">0</div>
+                            <div class="stat-label">Tahun Pengalaman</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-count="5">0</div>
+                            <div class="stat-label">Project Selesai</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-count="30">0</div>
+                            <div class="stat-label">Tim Dikelola</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-count="3">0</div>
+                            <div class="stat-label">Penghargaan</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== EXPERIENCE SECTION ====== -->
+        <div class="section-divider"></div>
+        <section class="section bg-darker" id="experience">
+            <div class="container">
+                <div class="section-header" data-aos="fade-right">
+                    <div>
+                        <p class="section-label">Karir</p>
+                        <h2 class="section-title">Pengalaman Kerja</h2>
+                    </div>
                     <div class="line"></div>
                 </div>
 
@@ -103,7 +214,7 @@
                     <!-- Exp 1 -->
                     <div class="timeline-item" data-aos="fade-up">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
+                        <div class="timeline-content glass-card hover-glow">
                             <div class="timeline-header mb-4">
                                 <div>
                                     <h3 class="text-xl font-bold text-white">Lead Technical & Coordinator</h3>
@@ -114,8 +225,8 @@
                             <ul class="styled-list">
                                 <li>Mengarahkan produksi teknis dan pascaproduksi untuk proyek video high-fidelity dan
                                     film pendek.</li>
-                                <li>Membantu mengelola dan mengawasi lini masa produksi tim kreatif saat produksi sampai
-                                    laporan akhir.</li>
+                                <li>Mengelola tim kreatif yang terdiri dari 30+ orang, mengawasi lini masa produksi, dan
+                                    memastikan konsistensi visual.</li>
                             </ul>
                         </div>
                     </div>
@@ -123,7 +234,7 @@
                     <!-- Exp 2 -->
                     <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
+                        <div class="timeline-content glass-card hover-glow">
                             <div class="timeline-header mb-4">
                                 <div>
                                     <h3 class="text-xl font-bold text-white">Lead Developer & Team Coordinator</h3>
@@ -145,11 +256,15 @@
             </div>
         </section>
 
-        <!-- Education Section -->
-        <section class="section bg-darker" id="education">
+        <!-- ====== EDUCATION SECTION ====== -->
+        <div class="section-divider"></div>
+        <section class="section" id="education">
             <div class="container">
                 <div class="section-header" data-aos="fade-right">
-                    <h2 class="section-title">Pendidikan</h2>
+                    <div>
+                        <p class="section-label">Akademik</p>
+                        <h2 class="section-title">Pendidikan</h2>
+                    </div>
                     <div class="line"></div>
                 </div>
 
@@ -159,7 +274,7 @@
                         <div class="mt-6">
                             <div class="flex-between align-start mb-2">
                                 <h3 class="text-xl font-bold text-white">S1 Matematika Murni</h3>
-                                <span class="text-sm font-mono text-gray">Jul 2026 - Jul 2030 (Est)</span>
+                                <span class="badge badge-primary">Jul 2026 - Jul 2030</span>
                             </div>
                             <p class="text-gradient font-medium mb-4">Universitas Gadjah Mada (UGM), Yogyakarta</p>
                             <ul class="styled-list">
@@ -170,13 +285,13 @@
                     </div>
 
                     <div class="edu-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="100">
-                        <div class="edu-icon"><i class="lucide-book" data-lucide="book-open"></i></div>
+                        <div class="edu-icon"><i data-lucide="book-open"></i></div>
                         <div class="mt-6">
                             <div class="flex-between align-start mb-2">
                                 <h3 class="text-xl font-bold text-white">MIPA</h3>
-                                <span class="text-sm font-mono text-gray">Jul 2023 - Jun 2026</span>
+                                <span class="badge badge-primary">Jul 2023 - Jun 2026</span>
                             </div>
-                            <p class="text-gradient font-medium mb-4">SMA Negeri 6 Yogyakarta, Yogyakarta</p>
+                            <p class="text-gradient font-medium mb-4">SMA Negeri 6 Yogyakarta</p>
                             <ul class="styled-list">
                                 <li>Fokus pada penguatan dasar Informatika dan Matematika tingkat lanjut.</li>
                             </ul>
@@ -186,101 +301,210 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section class="section" id="skills">
+        <!-- ====== SKILLS SECTION ====== -->
+        <div class="section-divider"></div>
+        <section class="section bg-darker" id="skills">
             <div class="container">
                 <div class="section-header" data-aos="fade-right">
-                    <h2 class="section-title">Keterampilan Teknis & Bahasa</h2>
+                    <div>
+                        <p class="section-label">Kompetensi</p>
+                        <h2 class="section-title">Keterampilan Teknis</h2>
+                    </div>
                     <div class="line"></div>
                 </div>
 
-                <div class="grid-3 mt-12">
-                    <!-- Skill Group 1 -->
-                    <div class="skill-box glass-card" data-aos="zoom-in" data-aos-delay="0">
+                <div class="skills-grid">
+                    <!-- Skill Group 1: Web Dev -->
+                    <div class="skill-box glass-card hover-glow" data-aos="fade-up" data-aos-delay="0">
                         <div class="skill-header">
-                            <i data-lucide="code-2" class="skill-icon"></i>
+                            <div class="skill-icon-wrapper purple">
+                                <i data-lucide="code-2"></i>
+                            </div>
                             <h3 class="font-bold text-white">Web & Mobile Dev</h3>
                         </div>
-                        <div class="tags mt-4">
-                            <span class="tag">HTML5</span>
-                            <span class="tag">CSS3</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">PHP</span>
-                            <span class="tag">MySQL</span>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">HTML5 & CSS3</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill purple" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill purple" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">PHP & MySQL</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill purple" data-width="75"></div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Skill Group 2 -->
-                    <div class="skill-box glass-card" data-aos="zoom-in" data-aos-delay="100">
+                    <!-- Skill Group 2: Programming -->
+                    <div class="skill-box glass-card hover-glow" data-aos="fade-up" data-aos-delay="100">
                         <div class="skill-header">
-                            <i data-lucide="cpu" class="skill-icon"></i>
+                            <div class="skill-icon-wrapper cyan">
+                                <i data-lucide="cpu"></i>
+                            </div>
                             <h3 class="font-bold text-white">Programming & Logic</h3>
                         </div>
-                        <div class="tags mt-4">
-                            <span class="tag">C++</span>
-                            <span class="tag">Competitive Programming</span>
-                            <span class="tag">Algorithms</span>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">C++</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill cyan" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">Algorithms</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill cyan" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">Competitive Prog.</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill cyan" data-width="70"></div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Skill Group 3 -->
-                    <div class="skill-box glass-card" data-aos="zoom-in" data-aos-delay="200">
+                    <!-- Skill Group 3: Design -->
+                    <div class="skill-box glass-card hover-glow" data-aos="fade-up" data-aos-delay="200">
                         <div class="skill-header">
-                            <i data-lucide="pen-tool" class="skill-icon"></i>
+                            <div class="skill-icon-wrapper pink">
+                                <i data-lucide="pen-tool"></i>
+                            </div>
                             <h3 class="font-bold text-white">Design & Tools</h3>
                         </div>
-                        <div class="tags mt-4">
-                            <span class="tag">UI/UX Design</span>
-                            <span class="tag">Figma</span>
-                            <span class="tag">CapCut</span>
-                            <span class="tag">Photography</span>
-                            <span class="tag">VS Code</span>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">UI/UX Design</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill pink" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">Figma</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill pink" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">Video Editing</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill pink" data-width="75"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Languages -->
-                <div class="mt-12 glass-card p-6 rounded-xl flex items-center justify-between flex-wrap gap-4"
-                    data-aos="fade-up">
-                    <div class="flex items-center gap-3">
-                        <i data-lucide="languages" class="text-primary icon-lg"></i>
+                <div class="mt-12 glass-card p-6 rounded-xl lang-card" data-aos="fade-up">
+                    <div class="lang-card-left">
+                        <i data-lucide="languages"></i>
                         <h3 class="font-bold text-white text-xl">Bahasa</h3>
                     </div>
-                    <div class="flex gap-8">
+                    <div class="lang-items">
                         <div>
-                            <p class="text-white font-semibold mb-1">Bahasa Indonesia</p>
-                            <p class="text-sm text-gray">Native</p>
+                            <p class="lang-item-label">Bahasa Indonesia</p>
+                            <p class="lang-item-level">Native Speaker</p>
                         </div>
                         <div>
-                            <p class="text-white font-semibold mb-1">Bahasa Inggris</p>
-                            <p class="text-sm text-gray">Professional Working</p>
+                            <p class="lang-item-label">Bahasa Inggris</p>
+                            <p class="lang-item-level">Professional Working</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects & Awards -->
-        <section class="section bg-darker" id="projects">
+        <!-- ====== PROJECTS & AWARDS ====== -->
+        <div class="section-divider"></div>
+        <section class="section" id="projects">
             <div class="container">
                 <div class="grid-2 gap-16">
                     <!-- Projects -->
                     <div>
                         <div class="section-header" data-aos="fade-right">
-                            <h2 class="section-title">Project Utama</h2>
+                            <div>
+                                <p class="section-label">Karya</p>
+                                <h2 class="section-title">Project Utama</h2>
+                            </div>
                             <div class="line"></div>
                         </div>
-                        <div class="project-card mt-8 group" data-aos="fade-up">
-                            <div class="project-img-wrapper">
-                                <div class="project-overlay">
-                                    <a href="https://youtu.be/cWrCfAWlgcg?si=0UGWSDA290mHMajY" target="_blank"
-                                        class="btn btn-primary btn-round"><i data-lucide="play"></i> Tonton Film</a>
+
+                        <div class="projects-grid" style="grid-template-columns: 1fr;">
+                            <!-- Project 1 -->
+                            <div class="project-card" data-aos="fade-up">
+                                <div class="project-img-wrapper">
+                                    <div class="project-overlay">
+                                        <a href="https://youtu.be/cWrCfAWlgcg?si=0UGWSDA290mHMajY" target="_blank"
+                                            class="btn btn-primary btn-round"><i data-lucide="play"></i> Tonton
+                                            Film</a>
+                                    </div>
+                                    <div class="abstract-gradient"></div>
                                 </div>
-                                <!-- Abstract gradient placeholder for video/movie -->
-                                <div class="abstract-gradient w-full h-full"></div>
-                                <div class="absolute bottom-4 left-4 z-10 text-white">
-                                    <span class="badge badge-glass mb-2">Short Movie</span>
-                                    <h3 class="text-2xl font-bold">Membasuh Memori</h3>
+                                <div class="project-info">
+                                    <span class="badge badge-primary mb-2">Short Movie</span>
+                                    <h3 class="text-xl font-bold text-white mb-2">Membasuh Memori</h3>
+                                    <p class="text-sm text-gray">Film pendek produksi tim kreatif dengan high-fidelity
+                                        visual editing dan storytelling berkualitas sinematik.</p>
+                                    <div class="project-tags">
+                                        <span class="project-tag">Video Production</span>
+                                        <span class="project-tag">Post-Production</span>
+                                        <span class="project-tag">Team Leadership</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 2 -->
+                            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                                <div class="project-img-wrapper">
+                                    <div class="project-overlay">
+                                        <a href="#" class="btn btn-glass btn-round"><i data-lucide="globe"></i>
+                                            Detail</a>
+                                    </div>
+                                    <div class="abstract-gradient-2"></div>
+                                </div>
+                                <div class="project-info">
+                                    <span class="badge badge-primary mb-2">Full-Stack Web</span>
+                                    <h3 class="text-xl font-bold text-white mb-2">Web Application Portfolio</h3>
+                                    <p class="text-sm text-gray">Solusi full-stack menggunakan PHP dan MySQL dengan
+                                        arsitektur yang terstruktur dan antarmuka responsif.</p>
+                                    <div class="project-tags">
+                                        <span class="project-tag">PHP</span>
+                                        <span class="project-tag">MySQL</span>
+                                        <span class="project-tag">HTML/CSS</span>
+                                        <span class="project-tag">JavaScript</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -289,17 +513,20 @@
                     <!-- Awards -->
                     <div>
                         <div class="section-header" data-aos="fade-right" data-aos-delay="100">
-                            <h2 class="section-title">Penghargaan</h2>
+                            <div>
+                                <p class="section-label">Prestasi</p>
+                                <h2 class="section-title">Penghargaan</h2>
+                            </div>
                             <div class="line"></div>
                         </div>
 
-                        <div class="awards-list mt-8">
+                        <div class="awards-list">
                             <div class="award-item" data-aos="fade-left" data-aos-delay="100">
                                 <div class="award-icon"><i data-lucide="trophy"></i></div>
                                 <div>
                                     <h4 class="text-white font-bold text-lg mb-1">Finalis OSN-P Informatika</h4>
                                     <p class="text-sm text-gray leading-relaxed">Kompetitor tingkat regional dalam
-                                        pemecahan masalah algoritma dan pemrograman.</p>
+                                        pemecahan masalah algoritma dan pemrograman kompetitif.</p>
                                 </div>
                             </div>
 
@@ -320,6 +547,15 @@
                                         mengimplementasikan solusi full-stack menggunakan PHP dan MySQL.</p>
                                 </div>
                             </div>
+
+                            <div class="award-item" data-aos="fade-left" data-aos-delay="400">
+                                <div class="award-icon"><i data-lucide="award"></i></div>
+                                <div>
+                                    <h4 class="text-white font-bold text-lg mb-1">SNBP 2026 — UGM</h4>
+                                    <p class="text-sm text-gray leading-relaxed">Diterima di Universitas Gadjah Mada
+                                        melalui jalur prestasi nasional SNBP.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -329,23 +565,65 @@
     </main>
 
     <!-- Footer -->
+    <div class="section-divider"></div>
     <footer class="footer">
         <div class="container">
-            <div class="flex-between items-center footer-content">
-                <div class="logo">CJM<span>.</span></div>
-                <p class="text-gray text-sm">© 2026 Christopher Juan Macrio. All Rights Reserved.</p>
-                <div class="social-links">
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=cjuanmacrio06@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email"><i data-lucide="mail"></i></a>
-                    <!-- Placeholder for potential social links -->
-                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-                    <a href="#" aria-label="Github"><i data-lucide="github"></i></a>
+            <div class="footer-grid">
+                <!-- Col 1: Brand -->
+                <div class="footer-brand">
+                    <a href="#" class="logo mb-4">CJM<span>.</span></a>
+                    <p class="text-sm text-gray leading-relaxed mb-6">
+                        Menggabungkan logika matematika dengan desain kreatif untuk membangun solusi digital yang elegan dan berdampak.
+                    </p>
+                    <a href="mailto:cjuanmacrio06@gmail.com" class="footer-email">
+                        <i data-lucide="mail" class="icon-sm"></i> cjuanmacrio06@gmail.com
+                    </a>
+                </div>
+                
+                <!-- Col 2: Quick Links -->
+                <div class="footer-links-col">
+                    <h4 class="text-white font-bold mb-4 text-lg">Navigasi</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">Tentang Saya</a></li>
+                        <li><a href="#experience">Pengalaman</a></li>
+                        <li><a href="#education">Pendidikan</a></li>
+                        <li><a href="#projects">Portofolio</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Social & Action -->
+                <div class="footer-social-col">
+                    <h4 class="text-white font-bold mb-4 text-lg">Terhubung</h4>
+                    <div class="social-links mb-6">
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="Github"><i data-lucide="github"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    </div>
+                    <a href="#" class="btn btn-primary w-full" style="width: 100%; border-radius: 8px; padding: 0.75rem" aria-label="Download CV">
+                        Dapatkan CV <i data-lucide="download" class="ml-2 icon-sm"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Christopher Juan Macrio. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Kembali ke atas">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
 </body>
 
