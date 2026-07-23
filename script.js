@@ -1,7 +1,7 @@
 /**
- * Christopher Juan Macrio - Professional Portfolio Scripts
+ * Christopher Juan Macrio — Dark Gaming / HUD Portfolio Scripts
  * Particles, Typing, Counter, Scroll Progress, Active Nav,
- * Mobile Menu, Skill Bars, Custom Cursor
+ * Mobile Menu, Skill Bars, Custom Cursor, Preloader, Back-to-Top
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,13 +17,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==============================
-    // PARTICLE SYSTEM
+    // PRELOADER
+    // ==============================
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                preloader.classList.add('hide');
+            }, 1900);
+        });
+        // Fallback in case load fires late
+        setTimeout(() => preloader.classList.add('hide'), 3000);
+    }
+
+    // ==============================
+    // PARTICLE SYSTEM (Crimson)
     // ==============================
     const canvas = document.getElementById('particles-canvas');
     if (canvas) {
         const ctx = canvas.getContext('2d');
         let particles = [];
-        let animationId;
 
         function resizeCanvas() {
             const hero = canvas.parentElement;
@@ -32,24 +45,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         class Particle {
-            constructor() {
-                this.reset();
-            }
+            constructor() { this.reset(); }
             reset() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 0.5;
-                this.speedX = (Math.random() - 0.5) * 0.4;
-                this.speedY = (Math.random() - 0.5) * 0.4;
-                this.opacity = Math.random() * 0.5 + 0.1;
+                this.size = Math.random() * 1.8 + 0.3;
+                this.speedX = (Math.random() - 0.5) * 0.35;
+                this.speedY = (Math.random() - 0.5) * 0.35;
+                this.opacity = Math.random() * 0.45 + 0.05;
                 this.fadeDir = Math.random() > 0.5 ? 1 : -1;
             }
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
                 this.opacity += this.fadeDir * 0.003;
-                if (this.opacity > 0.6) this.fadeDir = -1;
-                if (this.opacity < 0.05) this.fadeDir = 1;
+                if (this.opacity > 0.5) this.fadeDir = -1;
+                if (this.opacity < 0.04) this.fadeDir = 1;
                 if (this.x < -10 || this.x > canvas.width + 10 ||
                     this.y < -10 || this.y > canvas.height + 10) {
                     this.reset();
@@ -57,18 +68,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             draw() {
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(139, 92, 246, ${this.opacity})`;
+                // Diamond shape for particles
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(Math.PI / 4);
+                ctx.rect(-this.size / 2, -this.size / 2, this.size, this.size);
+                ctx.fillStyle = `rgba(230, 57, 70, ${this.opacity})`;
                 ctx.fill();
+                ctx.restore();
             }
         }
 
         function initParticles() {
-            const count = Math.min(80, Math.floor((canvas.width * canvas.height) / 15000));
+            const count = Math.min(70, Math.floor((canvas.width * canvas.height) / 16000));
             particles = [];
-            for (let i = 0; i < count; i++) {
-                particles.push(new Particle());
-            }
+            for (let i = 0; i < count; i++) particles.push(new Particle());
         }
 
         function connectParticles() {
@@ -77,10 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     const dx = particles[i].x - particles[j].x;
                     const dy = particles[i].y - particles[j].y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 120) {
-                        const opacity = (1 - dist / 120) * 0.12;
+                    if (dist < 110) {
+                        const opacity = (1 - dist / 110) * 0.1;
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(139, 92, 246, ${opacity})`;
+                        ctx.strokeStyle = `rgba(230, 57, 70, ${opacity})`;
                         ctx.lineWidth = 0.5;
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
@@ -92,12 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
+            particles.forEach(p => { p.update(); p.draw(); });
             connectParticles();
-            animationId = requestAnimationFrame(animateParticles);
+            requestAnimationFrame(animateParticles);
         }
 
         resizeCanvas();
@@ -144,19 +155,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (!isDeleting && charIdx === currentPhrase.length) {
-                typingSpeed = 2000; // Pause at end
+                typingSpeed = 2200;
                 isDeleting = true;
             } else if (isDeleting && charIdx === 0) {
                 isDeleting = false;
                 phraseIdx = (phraseIdx + 1) % phrases.length;
-                typingSpeed = 400; // Brief pause before next word
+                typingSpeed = 400;
             }
 
             setTimeout(typeEffect, typingSpeed);
         }
 
-        // Start typing after a brief delay
-        setTimeout(typeEffect, 800);
+        setTimeout(typeEffect, 1000);
     }
 
     // ==============================
@@ -173,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==============================
-    // CUSTOM CURSOR
+    // CUSTOM CURSOR (Crimson)
     // ==============================
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
@@ -189,30 +199,28 @@ document.addEventListener('DOMContentLoaded', () => {
             cursorDot.style.top = `${mouseY}px`;
         });
 
-        // Smooth outline follow
         function animateCursor() {
-            outlineX += (mouseX - outlineX) * 0.15;
-            outlineY += (mouseY - outlineY) * 0.15;
+            outlineX += (mouseX - outlineX) * 0.14;
+            outlineY += (mouseY - outlineY) * 0.14;
             cursorOutline.style.left = `${outlineX}px`;
             cursorOutline.style.top = `${outlineY}px`;
             requestAnimationFrame(animateCursor);
         }
         animateCursor();
 
-        // Hover effects
         const interactables = document.querySelectorAll('a, button, .hover-glow, .award-item, .project-card, .stat-card, .btn');
         interactables.forEach(el => {
             el.addEventListener('mouseenter', () => {
-                cursorOutline.style.width = '50px';
-                cursorOutline.style.height = '50px';
-                cursorOutline.style.borderColor = 'rgba(139, 92, 246, 0.5)';
-                cursorOutline.style.backgroundColor = 'rgba(139, 92, 246, 0.06)';
-                cursorDot.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                cursorOutline.style.width = '44px';
+                cursorOutline.style.height = '44px';
+                cursorOutline.style.borderColor = 'rgba(230, 57, 70, 0.6)';
+                cursorOutline.style.backgroundColor = 'rgba(230, 57, 70, 0.05)';
+                cursorDot.style.transform = 'translate(-50%, -50%) scale(1.8)';
             });
             el.addEventListener('mouseleave', () => {
-                cursorOutline.style.width = '36px';
-                cursorOutline.style.height = '36px';
-                cursorOutline.style.borderColor = 'rgba(139, 92, 246, 0.35)';
+                cursorOutline.style.width = '32px';
+                cursorOutline.style.height = '32px';
+                cursorOutline.style.borderColor = 'rgba(230, 57, 70, 0.4)';
                 cursorOutline.style.backgroundColor = 'transparent';
                 cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
             });
@@ -248,13 +256,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (navbar) {
         window.addEventListener('scroll', () => {
-            // Navbar shrink
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
-            // Active section
             updateActiveNav();
         }, { passive: true });
     }
@@ -272,7 +278,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
         });
 
-        // Close on link click
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
@@ -312,14 +317,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (countersAnimated) return;
         counters.forEach(counter => {
             const target = parseInt(counter.getAttribute('data-count'), 10);
-            const duration = 1500;
+            const duration = 1400;
             const startTime = performance.now();
-            const suffix = target >= 30 ? '+' : '+';
+            const suffix = '+';
 
             function updateCount(currentTime) {
                 const elapsed = currentTime - startTime;
                 const progress = Math.min(elapsed / duration, 1);
-                // Ease out cubic
                 const ease = 1 - Math.pow(1 - progress, 3);
                 const current = Math.floor(ease * target);
                 counter.textContent = current + suffix;
@@ -337,7 +341,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==============================
     // SKILL BAR ANIMATION
     // ==============================
-    const skillBars = document.querySelectorAll('.skill-bar-fill[data-width]');
+    const skillBars = document.querySelectorAll('.skill-track-fill[data-width], .skill-track-glow[data-width], .skill-bar-fill[data-width]');
     let skillBarsAnimated = false;
 
     function animateSkillBars() {
@@ -345,17 +349,16 @@ document.addEventListener('DOMContentLoaded', () => {
         skillBars.forEach((bar, index) => {
             setTimeout(() => {
                 bar.style.width = bar.getAttribute('data-width') + '%';
-            }, index * 80);
+            }, Math.floor(index / 2) * 80);
         });
         skillBarsAnimated = true;
     }
 
     // ==============================
-    // INTERSECTION OBSERVER (trigger animations)
+    // INTERSECTION OBSERVERS
     // ==============================
     const observerOptions = { threshold: 0.2, rootMargin: '0px 0px -50px 0px' };
 
-    // Observer for stats
     const aboutSection = document.getElementById('about');
     if (aboutSection && counters.length > 0) {
         const statsObserver = new IntersectionObserver((entries) => {
@@ -369,7 +372,6 @@ document.addEventListener('DOMContentLoaded', () => {
         statsObserver.observe(aboutSection);
     }
 
-    // Observer for skill bars
     const skillsSection = document.getElementById('skills');
     if (skillsSection && skillBars.length > 0) {
         const skillsObserver = new IntersectionObserver((entries) => {
@@ -382,4 +384,176 @@ document.addEventListener('DOMContentLoaded', () => {
         }, observerOptions);
         skillsObserver.observe(skillsSection);
     }
+
+    // ==============================
+    // BACK TO TOP
+    // ==============================
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        }, { passive: true });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+});
+
+/* ==========================================================================
+   TAHAP 6: PORTFOLIO & ACHIEVEMENTS FILTER / MODAL LOGIC
+   ========================================================================== */
+
+function initPortfolio() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    if (!filterBtns.length || !projectCards.length) return;
+
+    // Filter Logic
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                
+                if (filterValue === 'all' || category === filterValue) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0) scale(1)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px) scale(0.95)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+}
+
+// Modal Detail Project (Jika menggunakan modal)
+function initProjectModal() {
+    const modal = document.getElementById('projectModal');
+    const modalClose = document.getElementById('modalClose');
+    const projectTriggers = document.querySelectorAll('.view-project-btn');
+
+    if (!modal) return;
+
+    projectTriggers.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Ambil data dari atribut card
+            const card = btn.closest('.project-card');
+            if (!card) return;
+
+            const title = card.querySelector('.project-title')?.textContent || 'Project Detail';
+            const desc = card.getAttribute('data-desc') || 'Deskripsi detail project belum ditambahkan.';
+            
+            // Populate modal content
+            const modalTitle = modal.querySelector('.modal-title');
+            const modalBody = modal.querySelector('.modal-body');
+
+            if (modalTitle) modalTitle.textContent = title;
+            if (modalBody) modalBody.textContent = desc;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Stop scroll
+        });
+    });
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    };
+
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    
+    // Close modal on click outside content
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+}
+
+/* ==========================================================================
+   TAHAP 7: FOOTER, CONTACT FORM, BACK TO TOP & APP INITIALIZATION
+   ========================================================================== */
+
+// Handle Contact Form / Mailto Trigger
+function initContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const nameInput = document.getElementById('formName');
+        const emailInput = document.getElementById('formEmail');
+        const messageInput = document.getElementById('formMessage');
+
+        const name = nameInput ? nameInput.value.trim() : '';
+        const email = emailInput ? emailInput.value.trim() : '';
+        const message = messageInput ? messageInput.value.trim() : '';
+
+        if (!name || !message) {
+            alert('Harap isi nama dan pesan Anda terlebih dahulu.');
+            return;
+        }
+
+        // Format pesan ke URL Mailto
+        const subject = encodeURIComponent(`[Portfolio Contact] Pesan dari ${name}`);
+        const body = encodeURIComponent(`Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`);
+        
+        // Ganti email_tujuan@domain.com dengan email Anda
+        window.location.href = `mailto:email_tujuan@domain.com?subject=${subject}&body=${body}`;
+
+        // Reset Form
+        contactForm.reset();
+    });
+}
+
+// Back to Top Button Logic
+function initBackToTop() {
+    const backToTopBtn = document.querySelector('.back-to-top');
+
+    if (!backToTopBtn) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+/* ==========================================================================
+   MAIN SYSTEM INITIALIZER (DOM Loaded Event)
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    // Panggil semua fungsi dari Tahap 1 - Tahap 7
+    initPortfolio();
+    initProjectModal();
+    initContactForm();
+    initBackToTop();
 });
