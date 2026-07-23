@@ -4,28 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christopher Juan Macrio | Web Developer & UI/UX Designer</title>
+    <title>Christopher Juan Macrio | Web Developer &amp; UI/UX Designer</title>
 
     <!-- SEO & Performance Meta Tags -->
     <meta name="description"
-        content="Portfolio of Christopher Juan Macrio, Web Developer & UI/UX Designer based in Yogyakarta. Explore my experience, projects, and skills.">
+        content="Portfolio of Christopher Juan Macrio, Web Developer &amp; UI/UX Designer based in Yogyakarta. Explore my experience, projects, and skills.">
     <meta name="keywords" content="Christopher Juan Macrio, Web Developer, UI/UX Designer, Portfolio, Yogyakarta, UGM">
     <meta name="author" content="Christopher Juan Macrio">
-    <meta name="theme-color" content="#06060a">
+    <meta name="theme-color" content="#0b0b0d">
 
     <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Christopher Juan Macrio | Web Developer & UI/UX Designer">
+    <meta property="og:title" content="Christopher Juan Macrio | Web Developer &amp; UI/UX Designer">
     <meta property="og:description"
         content="Menggabungkan logika matematika dengan desain kreatif untuk membangun solusi digital yang elegan dan berdampak.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cjuanmacrio.com">
-    <meta property="og:image" content="https://cjuanmacrio.com/og-image.jpg">
+    <meta property="og:url" content="https://azazael-arch.github.io/portofolio">
+    <meta property="og:image" content="https://azazael-arch.github.io/portofolio/og-image.jpg">
 
-    <!-- Fonts -->
+    <!-- Fonts: Orbitron (heading) + Inter (body) + JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
 
     <!-- Animations -->
@@ -100,47 +100,83 @@
             <div class="hero-bg-glow"></div>
             <div class="hero-bg-glow-2"></div>
 
+            <!-- HUD corner decorations -->
+            <div class="hero-corner-tl"></div>
+            <div class="hero-corner-br"></div>
+
+            <!-- HUD Coordinate readout -->
+            <div class="hud-coords">
+                <span>LAT: -7.797° S</span>
+                <span>LON: 110.370° E</span>
+                <span>[ YOGYAKARTA_NODE ]</span>
+                <span>SYS: ONLINE ■</span>
+            </div>
+
             <div class="container hero-content">
-                <div class="hero-status" data-aos="fade-down">
-                    <div class="status-dot"></div>
-                    <span>Open to Opportunities</span>
-                </div>
+                <div class="hero-grid">
+                    <!-- Left: Main Headline Area -->
+                    <div class="hero-left">
+                        <div class="hero-badge-wrapper" data-aos="fade-down">
+                            <span class="hero-number font-mono">01 +</span>
+                            <span class="hero-tag font-mono">ACTIVE_SESSION</span>
+                        </div>
 
-                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="50">Halo, saya</p>
+                        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                            <span class="text-gradient">Christopher Juan</span><br>Macrio
+                        </h1>
 
-                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
-                    <span class="text-gradient">Christopher Juan</span><br>Macrio
-                </h1>
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="150">
+                            Web Developer &amp; UI/UX Designer <span class="accent-sep">|</span> Pure Mathematics @ UGM
+                        </p>
 
-                <p class="hero-role" data-aos="fade-up" data-aos-delay="150">
-                    <span id="typingText"></span><span class="typing-cursor"></span>
-                </p>
+                        <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
+                            Menggabungkan logika matematika dengan desain kreatif untuk membangun solusi digital yang elegan dan berdampak.
+                        </p>
 
-                <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
-                    Menggabungkan logika matematika dengan desain kreatif untuk membangun solusi digital yang elegan dan
-                    berdampak.
-                </p>
-
-                <div class="hero-contact-info" data-aos="fade-up" data-aos-delay="250">
-                    <div class="contact-item">
-                        <i data-lucide="map-pin"></i>
-                        <span>Yogyakarta, Indonesia</span>
+                        <div class="hero-actions" data-aos="fade-up" data-aos-delay="250">
+                            <a href="#experience" class="btn btn-primary">Lihat Perjalanan Saya <i data-lucide="arrow-right" class="ml-2 icon-sm"></i></a>
+                            <a href="#projects" class="btn btn-glass">Lihat Project</a>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <i data-lucide="mail"></i>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=cjuanmacrio06@gmail.com" target="_blank"
-                            rel="noopener noreferrer">cjuanmacrio06@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <i data-lucide="phone"></i>
-                        <a href="tel:+62895392907780">+62 895-3929-07780</a>
-                    </div>
-                </div>
 
-                <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
-                    <a href="#experience" class="btn btn-primary">Lihat Perjalanan Saya <i data-lucide="arrow-right"
-                            class="ml-2 icon-sm"></i></a>
-                    <a href="#projects" class="btn btn-glass">Lihat Project</a>
+                    <!-- Right: HUD Side-Panel Widget -->
+                    <div class="hero-right" data-aos="fade-left" data-aos-delay="200">
+                        <div class="hud-side-panel shard-panel">
+                            <div class="hud-panel-header">
+                                <span class="hud-panel-title font-mono">// DAT_CORE_INTEGRITY</span>
+                                <span class="hud-panel-dot"></span>
+                            </div>
+                            
+                            <div class="hud-panel-content">
+                                <div class="hud-info-row">
+                                    <div class="hud-info-label font-mono"><i data-lucide="map-pin"></i> LOC // LOKASI</div>
+                                    <div class="hud-info-value font-mono">Yogyakarta, IDN</div>
+                                </div>
+                                <div class="hud-info-row">
+                                    <div class="hud-info-label font-mono"><i data-lucide="mail"></i> COMM // EMAIL</div>
+                                    <div class="hud-info-value font-mono">
+                                        <a href="mailto:cjuanmacrio06@gmail.com" class="text-link">cjuanmacrio06@gmail.com</a>
+                                    </div>
+                                </div>
+                                <div class="hud-info-row">
+                                    <div class="hud-info-label font-mono"><i data-lucide="activity"></i> STAT // STATUS</div>
+                                    <div class="hud-info-value font-mono status-active">
+                                        <span class="status-pulse-dot"></span>
+                                        Open to Opportunities
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Sci-fi / Math Deco readout -->
+                            <div class="hud-panel-footer font-mono">
+                                <div class="hud-footer-line"></div>
+                                <div class="hud-readout-grid">
+                                    <span>COORD: 7.797° S, 110.370° E</span>
+                                    <span>MATH_LOGIC: OPTIMIZED</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -157,7 +193,7 @@
             <div class="container">
                 <div class="section-header" data-aos="fade-right">
                     <div>
-                        <p class="section-label">Perkenalan</p>
+                        <p class="section-label">// 02 + ATTRIBUTES</p>
                         <h2 class="section-title">Tentang Saya</h2>
                     </div>
                     <div class="line"></div>
@@ -180,7 +216,7 @@
                         <p>
                             Saat ini saya telah diterima di <strong class="text-white">Universitas Gadjah Mada
                                 (UGM)</strong> untuk
-                            program S1 Matematika Murni melalui jalur <strong class="text-gradient">SNBP 2026</strong>,
+                            <strong class="text-white">S1 Matematika Murni</strong> melalui jalur <strong class="text-gradient">SNBP 2026</strong>,
                             di mana saya
                             akan mendalami logika matematika dan algoritma yang memperkuat fondasi saya dalam dunia
                             teknologi.
@@ -189,40 +225,56 @@
 
                     <div class="about-stats" data-aos="fade-up" data-aos-delay="100">
                         <div class="stat-card">
+                            <div class="stat-header-hud font-mono">ATTR_01 // EXP</div>
                             <div class="stat-number" data-count="2">0</div>
                             <div class="stat-label">Tahun Pengalaman</div>
+                            <div class="hud-stat-bar">
+                                <div class="hud-stat-bar-fill fill-exp" style="width: 40%;"></div>
+                            </div>
                         </div>
                         <div class="stat-card">
+                            <div class="stat-header-hud font-mono">ATTR_02 // PROJ</div>
                             <div class="stat-number" data-count="5">0</div>
                             <div class="stat-label">Project Selesai</div>
+                            <div class="hud-stat-bar">
+                                <div class="hud-stat-bar-fill fill-proj" style="width: 65%;"></div>
+                            </div>
                         </div>
                         <div class="stat-card">
+                            <div class="stat-header-hud font-mono">ATTR_03 // MGMT</div>
                             <div class="stat-number" data-count="12">0</div>
                             <div class="stat-label">Tim Dikelola</div>
+                            <div class="hud-stat-bar">
+                                <div class="hud-stat-bar-fill fill-mgmt" style="width: 80%;"></div>
+                            </div>
                         </div>
                         <div class="stat-card">
+                            <div class="stat-header-hud font-mono">ATTR_04 // AWRD</div>
                             <div class="stat-number" data-count="3">0</div>
                             <div class="stat-label">Penghargaan</div>
+                            <div class="hud-stat-bar">
+                                <div class="hud-stat-bar-fill fill-awrd" style="width: 50%;"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ====== EXPERIENCE SECTION ====== -->
+        <!-- ====== CAREER & EDUCATION SECTION ====== -->
         <div class="section-divider"></div>
         <section class="section bg-darker" id="experience">
             <div class="container">
                 <div class="section-header" data-aos="fade-right">
                     <div>
-                        <p class="section-label">Karir</p>
-                        <h2 class="section-title">Pengalaman Kerja</h2>
+                        <p class="section-label">// 04 + CAREER &amp; EDUCATION</p>
+                        <h2 class="section-title">Pengalaman &amp; Pendidikan</h2>
                     </div>
                     <div class="line"></div>
                 </div>
 
                 <div class="timeline">
-                    <!-- Exp 1 -->
+                    <!-- Exp 1: Freelance Web Developer -->
                     <div class="timeline-item" data-aos="fade-up">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content glass-card hover-glow">
@@ -231,7 +283,7 @@
                                     <h3 class="text-xl font-bold text-white">Freelance Web Developer</h3>
                                     <p class="text-gradient font-medium mt-1">Proyek Pembuatan Website PT (Corporate)</p>
                                 </div>
-                                <div class="badge badge-primary">2025 - Sekarang</div>
+                                <div class="badge badge-primary">2025 - NOW</div>
                             </div>
                             <ul class="styled-list">
                                 <li>Merancang dan membangun website fungsional dengan antarmuka pengguna yang modern khusus untuk kebutuhan perusahaan.</li>
@@ -240,72 +292,20 @@
                         </div>
                     </div>
 
-                    <!-- Exp 2 -->
+                    <!-- Edu 1: S1 Matematika Murni UGM -->
                     <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content glass-card hover-glow">
                             <div class="timeline-header mb-4">
                                 <div>
-                                    <h3 class="text-xl font-bold text-white">Lead Technical & Coordinator</h3>
-                                    <p class="text-gradient font-medium mt-1">Multimedia Projects, Yogyakarta</p>
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="graduation-cap" class="text-primary icon-sm mb-1"></i>
+                                        <h3 class="text-xl font-bold text-white">S1 Matematika Murni</h3>
+                                    </div>
+                                    <p class="text-gradient font-medium mt-1">Universitas Gadjah Mada (UGM), Yogyakarta</p>
                                 </div>
-                                <div class="badge badge-primary">Okt 2025 - Apr 2026</div>
+                                <div class="badge badge-primary">Jul 2026 - NOW</div>
                             </div>
-                            <ul class="styled-list">
-                                <li>Mengarahkan produksi teknis dan pascaproduksi untuk proyek video high-fidelity dan
-                                    film pendek.</li>
-                                <li>Mengelola tim kreatif yang terdiri dari 12+ orang, mengawasi lini masa produksi, dan
-                                    memastikan konsistensi visual.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Exp 3 -->
-                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card hover-glow">
-                            <div class="timeline-header mb-4">
-                                <div>
-                                    <h3 class="text-xl font-bold text-white">Lead Developer & Team Coordinator</h3>
-                                    <p class="text-gradient font-medium mt-1">IT Projects, Yogyakarta</p>
-                                </div>
-                                <div class="badge badge-primary">Agu 2024 - Feb 2026</div>
-                            </div>
-                            <ul class="styled-list">
-                                <li>Mengoordinasikan persyaratan sistem dan distribusi tugas untuk proyek pengembangan
-                                    perangkat lunak kolaboratif.</li>
-                                <li>Memfasilitasi komunikasi antara fase desain dan pengembangan untuk memastikan produk
-                                    akhir yang lancar.</li>
-                                <li>Mengelola kontrol versi dan konfigurasi lingkungan untuk lingkungan pengkodean
-                                    berbasis tim.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ====== EDUCATION SECTION ====== -->
-        <div class="section-divider"></div>
-        <section class="section" id="education">
-            <div class="container">
-                <div class="section-header" data-aos="fade-right">
-                    <div>
-                        <p class="section-label">Akademik</p>
-                        <h2 class="section-title">Pendidikan</h2>
-                    </div>
-                    <div class="line"></div>
-                </div>
-
-                <div class="grid-2">
-                    <div class="edu-card glass-card hover-glow" data-aos="fade-up">
-                        <div class="edu-icon"><i data-lucide="graduation-cap"></i></div>
-                        <div class="mt-6">
-                            <div class="flex-between align-start mb-2">
-                                <h3 class="text-xl font-bold text-white">S1 Matematika Murni</h3>
-                                <span class="badge badge-primary">Jul 2026 - SOON</span>
-                            </div>
-                            <p class="text-gradient font-medium mb-4">Universitas Gadjah Mada (UGM), Yogyakarta</p>
                             <ul class="styled-list">
                                 <li>Lolos jalur SNBP 2026.</li>
                                 <li>Fokus pada logika matematika dan algoritma.</li>
@@ -313,14 +313,57 @@
                         </div>
                     </div>
 
-                    <div class="edu-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="100">
-                        <div class="edu-icon"><i data-lucide="book-open"></i></div>
-                        <div class="mt-6">
-                            <div class="flex-between align-start mb-2">
-                                <h3 class="text-xl font-bold text-white">MIPA</h3>
-                                <span class="badge badge-primary">Jul 2023 - Jun 2026</span>
+                    <!-- Exp 2: Lead Technical & Coordinator -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card hover-glow">
+                            <div class="timeline-header mb-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Lead Technical &amp; Coordinator</h3>
+                                    <p class="text-gradient font-medium mt-1">Multimedia Projects, Yogyakarta</p>
+                                </div>
+                                <div class="badge badge-primary">Okt 2025 - Apr 2026</div>
                             </div>
-                            <p class="text-gradient font-medium mb-4">SMA Negeri 6 Yogyakarta</p>
+                            <ul class="styled-list">
+                                <li>Mengarahkan produksi teknis dan pascaproduksi untuk proyek video high-fidelity dan film pendek.</li>
+                                <li>Mengelola tim kreatif yang terdiri dari 12+ orang, mengawasi lini masa produksi, dan memastikan konsistensi visual.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Exp 3: Lead Developer & Team Coordinator -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card hover-glow">
+                            <div class="timeline-header mb-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Lead Developer &amp; Team Coordinator</h3>
+                                    <p class="text-gradient font-medium mt-1">IT Projects, Yogyakarta</p>
+                                </div>
+                                <div class="badge badge-primary">Agu 2024 - Feb 2026</div>
+                            </div>
+                            <ul class="styled-list">
+                                <li>Mengoordinasikan persyaratan sistem dan distribusi tugas untuk proyek pengembangan perangkat lunak kolaboratif.</li>
+                                <li>Memfasilitasi komunikasi antara fase desain dan pengembangan untuk memastikan produk akhir yang lancar.</li>
+                                <li>Mengelola kontrol versi dan konfigurasi lingkungan untuk lingkungan pengkodean berbasis tim.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Edu 2: MIPA SMAN 6 -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card hover-glow">
+                            <div class="timeline-header mb-4">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="book-open" class="text-primary icon-sm mb-1"></i>
+                                        <h3 class="text-xl font-bold text-white">MIPA</h3>
+                                    </div>
+                                    <p class="text-gradient font-medium mt-1">SMA Negeri 6 Yogyakarta</p>
+                                </div>
+                                <div class="badge badge-primary">Jul 2023 - Jun 2026</div>
+                            </div>
                             <ul class="styled-list">
                                 <li>Fokus pada penguatan dasar Informatika dan Matematika tingkat lanjut.</li>
                             </ul>
@@ -336,127 +379,195 @@
             <div class="container">
                 <div class="section-header" data-aos="fade-right">
                     <div>
-                        <p class="section-label">Kompetensi</p>
+                        <p class="section-label">// 03 + SKILL GRID</p>
                         <h2 class="section-title">Keterampilan Teknis</h2>
                     </div>
                     <div class="line"></div>
                 </div>
 
                 <div class="skills-grid">
-                    <!-- Skill Group 1: Web Dev -->
-                    <div class="skill-box glass-card hover-glow" data-aos="fade-up" data-aos-delay="0">
-                        <div class="skill-header">
-                            <div class="skill-icon-wrapper purple">
+
+                    <!-- ── Kartu 1 : Web & Mobile Dev ─────────────────── -->
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="0">
+                        <!-- Card Header -->
+                        <div class="skill-card-header">
+                            <div class="skill-card-icon">
                                 <i data-lucide="code-2"></i>
                             </div>
-                            <h3 class="font-bold text-white">Web & Mobile Dev</h3>
+                            <div>
+                                <p class="skill-card-module font-mono">MODULE_01</p>
+                                <h3 class="skill-card-title">Web &amp; Mobile Dev</h3>
+                            </div>
+                            <div class="skill-card-status font-mono">ACTIVE</div>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span class="skill-name">HTML5 & CSS3</span>
-                                <span class="skill-percent">90%</span>
+
+                        <!-- Skill Rows -->
+                        <div class="skill-rows">
+                            <div class="skill-row">
+                                <div class="skill-row-meta">
+                                    <span class="skill-row-name font-mono">HTML5 &amp; CSS3</span>
+                                    <span class="skill-row-pct font-mono">90<span class="pct-unit">%</span></span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-track-fill" data-width="90" style="width:0%"></div>
+                                    <div class="skill-track-glow" data-width="90" style="width:0%"></div>
+                                </div>
+                                <div class="skill-row-ticks">
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                </div>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-bar-fill purple" data-width="90"></div>
+                            <div class="skill-row">
+                                <div class="skill-row-meta">
+                                    <span class="skill-row-name font-mono">JavaScript</span>
+                                    <span class="skill-row-pct font-mono">80<span class="pct-unit">%</span></span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-track-fill" data-width="80" style="width:0%"></div>
+                                    <div class="skill-track-glow" data-width="80" style="width:0%"></div>
+                                </div>
+                                <div class="skill-row-ticks">
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span class="skill-name">JavaScript</span>
-                                <span class="skill-percent">80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-bar-fill purple" data-width="80"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span class="skill-name">PHP & MySQL</span>
-                                <span class="skill-percent">75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-bar-fill purple" data-width="75"></div>
+                            <div class="skill-row">
+                                <div class="skill-row-meta">
+                                    <span class="skill-row-name font-mono">PHP &amp; MySQL</span>
+                                    <span class="skill-row-pct font-mono">75<span class="pct-unit">%</span></span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-track-fill" data-width="75" style="width:0%"></div>
+                                    <div class="skill-track-glow" data-width="75" style="width:0%"></div>
+                                </div>
+                                <div class="skill-row-ticks">
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Skill Group 2: Programming -->
-                    <div class="skill-box glass-card hover-glow" data-aos="fade-up" data-aos-delay="100">
-                        <div class="skill-header">
-                            <div class="skill-icon-wrapper cyan">
+                    <!-- ── Kartu 2 : Programming & Logic ──────────────── -->
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="120">
+                        <div class="skill-card-header">
+                            <div class="skill-card-icon accent-amber">
                                 <i data-lucide="cpu"></i>
                             </div>
-                            <h3 class="font-bold text-white">Programming & Logic</h3>
+                            <div>
+                                <p class="skill-card-module font-mono">MODULE_02</p>
+                                <h3 class="skill-card-title">Programming &amp; Logic</h3>
+                            </div>
+                            <div class="skill-card-status font-mono">ACTIVE</div>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span class="skill-name">C++</span>
-                                <span class="skill-percent">85%</span>
+                        <div class="skill-rows">
+                            <div class="skill-row">
+                                <div class="skill-row-meta">
+                                    <span class="skill-row-name font-mono">C++</span>
+                                    <span class="skill-row-pct font-mono">85<span class="pct-unit">%</span></span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-track-fill" data-width="85" style="width:0%"></div>
+                                    <div class="skill-track-glow" data-width="85" style="width:0%"></div>
+                                </div>
+                                <div class="skill-row-ticks">
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                </div>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-bar-fill cyan" data-width="85"></div>
+                            <div class="skill-row">
+                                <div class="skill-row-meta">
+                                    <span class="skill-row-name font-mono">Algorithms</span>
+                                    <span class="skill-row-pct font-mono">80<span class="pct-unit">%</span></span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-track-fill" data-width="80" style="width:0%"></div>
+                                    <div class="skill-track-glow" data-width="80" style="width:0%"></div>
+                                </div>
+                                <div class="skill-row-ticks">
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span class="skill-name">Algorithms</span>
-                                <span class="skill-percent">80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-bar-fill cyan" data-width="80"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span class="skill-name">Competitive Prog.</span>
-                                <span class="skill-percent">70%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-bar-fill cyan" data-width="70"></div>
+                            <div class="skill-row">
+                                <div class="skill-row-meta">
+                                    <span class="skill-row-name font-mono">Competitive Prog.</span>
+                                    <span class="skill-row-pct font-mono">70<span class="pct-unit">%</span></span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-track-fill" data-width="70" style="width:0%"></div>
+                                    <div class="skill-track-glow" data-width="70" style="width:0%"></div>
+                                </div>
+                                <div class="skill-row-ticks">
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Skill Group 3: Design -->
-                    <div class="skill-box glass-card hover-glow" data-aos="fade-up" data-aos-delay="200">
-                        <div class="skill-header">
-                            <div class="skill-icon-wrapper pink">
+                    <!-- ── Kartu 3 : Design & Tools ───────────────────── -->
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="240">
+                        <div class="skill-card-header">
+                            <div class="skill-card-icon accent-rose">
                                 <i data-lucide="pen-tool"></i>
                             </div>
-                            <h3 class="font-bold text-white">Design & Tools</h3>
+                            <div>
+                                <p class="skill-card-module font-mono">MODULE_03</p>
+                                <h3 class="skill-card-title">Design &amp; Tools</h3>
+                            </div>
+                            <div class="skill-card-status font-mono">ACTIVE</div>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span class="skill-name">UI/UX Design</span>
-                                <span class="skill-percent">85%</span>
+                        <div class="skill-rows">
+                            <div class="skill-row">
+                                <div class="skill-row-meta">
+                                    <span class="skill-row-name font-mono">UI/UX Design</span>
+                                    <span class="skill-row-pct font-mono">85<span class="pct-unit">%</span></span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-track-fill" data-width="85" style="width:0%"></div>
+                                    <div class="skill-track-glow" data-width="85" style="width:0%"></div>
+                                </div>
+                                <div class="skill-row-ticks">
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                </div>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-bar-fill pink" data-width="85"></div>
+                            <div class="skill-row">
+                                <div class="skill-row-meta">
+                                    <span class="skill-row-name font-mono">Figma</span>
+                                    <span class="skill-row-pct font-mono">80<span class="pct-unit">%</span></span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-track-fill" data-width="80" style="width:0%"></div>
+                                    <div class="skill-track-glow" data-width="80" style="width:0%"></div>
+                                </div>
+                                <div class="skill-row-ticks">
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span class="skill-name">Figma</span>
-                                <span class="skill-percent">80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-bar-fill pink" data-width="80"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span class="skill-name">Video Editing</span>
-                                <span class="skill-percent">75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-bar-fill pink" data-width="75"></div>
+                            <div class="skill-row">
+                                <div class="skill-row-meta">
+                                    <span class="skill-row-name font-mono">Video Editing</span>
+                                    <span class="skill-row-pct font-mono">75<span class="pct-unit">%</span></span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-track-fill" data-width="75" style="width:0%"></div>
+                                    <div class="skill-track-glow" data-width="75" style="width:0%"></div>
+                                </div>
+                                <div class="skill-row-ticks">
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Languages -->
-                <div class="mt-12 glass-card p-6 rounded-xl lang-card" data-aos="fade-up">
+                </div><!-- /.skills-grid -->
+
+                <!-- ── Languages footer card ──────────────────────────── -->
+                <div class="mt-12 glass-card p-6 lang-card" data-aos="fade-up">
                     <div class="lang-card-left">
                         <i data-lucide="languages"></i>
                         <h3 class="font-bold text-white text-xl">Bahasa</h3>
@@ -475,37 +586,47 @@
             </div>
         </section>
 
-        <!-- ====== PROJECTS & AWARDS ====== -->
+        <!-- ====== SHOWCASE & ACHIEVEMENTS ====== -->
         <div class="section-divider"></div>
         <section class="section" id="projects">
             <div class="container">
-                <div class="grid-2 gap-16">
+                <div class="section-header" data-aos="fade-right">
+                    <div>
+                        <p class="section-label">// 05 + SHOWCASE &amp; ACHIEVEMENTS</p>
+                        <h2 class="section-title">Project Utama &amp; Penghargaan</h2>
+                    </div>
+                    <div class="line"></div>
+                </div>
+
+                <div class="grid-2 gap-16 mt-8">
                     <!-- Projects -->
                     <div>
-                        <div class="section-header" data-aos="fade-right">
-                            <div>
-                                <p class="section-label">Karya</p>
-                                <h2 class="section-title">Project Utama</h2>
-                            </div>
-                            <div class="line"></div>
-                        </div>
-
+                        <h3 class="font-mono text-primary text-sm mb-6 tracking-widest uppercase">
+                            <i data-lucide="folder-git-2" class="icon-sm mr-2 inline-block"></i>// Highlight_Project
+                        </h3>
                         <div class="projects-grid" style="grid-template-columns: 1fr;">
                             <!-- Project 1 -->
                             <div class="project-card" data-aos="fade-up">
                                 <div class="project-img-wrapper">
+                                    <!-- Gambar Thumbnail Otomatis dari YouTube -->
+                                    <img 
+                                        src="https://img.youtube.com/vi/cWrCfAWlgcg/maxresdefault.jpg" 
+                                        alt="Membasuh Memori Thumbnail" 
+                                        style="width: 100%; height: 100%; object-fit: cover;"
+                                    >
                                     <div class="project-overlay">
-                                        <a href="https://youtu.be/cWrCfAWlgcg?si=0UGWSDA290mHMajY" target="_blank"
-                                            class="btn btn-primary btn-round"><i data-lucide="play"></i> Tonton
-                                            Film</a>
+                                        <a href="https://youtu.be/cWrCfAWlgcg" target="_blank" class="btn btn-primary btn-round">
+                                            <i data-lucide="play"></i> Tonton Film
+                                        </a>
                                     </div>
                                     <div class="abstract-gradient"></div>
                                 </div>
                                 <div class="project-info">
                                     <span class="badge badge-primary mb-2">Short Movie</span>
                                     <h3 class="text-xl font-bold text-white mb-2">Membasuh Memori</h3>
-                                    <p class="text-sm text-gray">Film pendek produksi tim kreatif dengan high-fidelity
-                                        visual editing dan storytelling berkualitas sinematik.</p>
+                                    <p class="text-sm text-gray leading-relaxed mb-4">
+                                        Film pendek produksi tim kreatif dengan high-fidelity visual editing dan storytelling berkualitas sinematik.
+                                    </p>
                                     <div class="project-tags">
                                         <span class="project-tag">Video Production</span>
                                         <span class="project-tag">Post-Production</span>
@@ -513,21 +634,12 @@
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
 
                     <!-- Awards -->
                     <div>
-                        <div class="section-header" data-aos="fade-right" data-aos-delay="100">
-                            <div>
-                                <p class="section-label">Prestasi</p>
-                                <h2 class="section-title">Penghargaan</h2>
-                            </div>
-                            <div class="line"></div>
-                        </div>
-
+                        <h3 class="font-mono text-primary text-sm mb-6 tracking-widest uppercase"><i data-lucide="award" class="icon-sm mr-2 inline-block"></i>// Milestones_&_Awards</h3>
                         <div class="awards-list">
                             <div class="award-item" data-aos="fade-left" data-aos-delay="100">
                                 <div class="award-icon"><i data-lucide="trophy"></i></div>
@@ -541,27 +653,18 @@
                             <div class="award-item" data-aos="fade-left" data-aos-delay="200">
                                 <div class="award-icon"><i data-lucide="medal"></i></div>
                                 <div>
-                                    <h4 class="text-white font-bold text-lg mb-1">Participant FIND IT UGM (2026)</h4>
+                                    <h4 class="text-white font-bold text-lg mb-1">Participant Omah TI Academy 2026</h4>
                                     <p class="text-sm text-gray leading-relaxed">Berkompetisi dalam ajang teknologi
-                                        informasi tingkat nasional di Universitas Gadjah Mada.</p>
+                                        informasi di Universitas Gadjah Mada.</p>
                                 </div>
                             </div>
 
                             <div class="award-item" data-aos="fade-left" data-aos-delay="300">
-                                <div class="award-icon"><i data-lucide="star"></i></div>
-                                <div>
-                                    <h4 class="text-white font-bold text-lg mb-1">Technical Portfolio Development</h4>
-                                    <p class="text-sm text-gray leading-relaxed">Berhasil merancang dan
-                                        mengimplementasikan solusi full-stack menggunakan PHP dan MySQL.</p>
-                                </div>
-                            </div>
-
-                            <div class="award-item" data-aos="fade-left" data-aos-delay="400">
                                 <div class="award-icon"><i data-lucide="award"></i></div>
                                 <div>
-                                    <h4 class="text-white font-bold text-lg mb-1">SNBP 2026 — UGM</h4>
+                                    <h4 class="text-white font-bold text-lg mb-1">Lolos SNBP UGM</h4>
                                     <p class="text-sm text-gray leading-relaxed">Diterima di Universitas Gadjah Mada
-                                        melalui jalur prestasi nasional SNBP.</p>
+                                        melalui jalur prestasi nasional (SNBP 2026).</p>
                                 </div>
                             </div>
                         </div>
@@ -591,7 +694,7 @@
 
                 <!-- Col 2: Quick Links -->
                 <div class="footer-links-col">
-                    <h4 class="text-white font-bold mb-4 text-lg">Navigasi</h4>
+                    <h4>Navigasi</h4>
                     <ul class="footer-links-list">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">Tentang Saya</a></li>
@@ -603,10 +706,9 @@
 
                 <!-- Col 3: Social & Action -->
                 <div class="footer-social-col">
-                    <h4 class="text-white font-bold mb-4 text-lg">Terhubung</h4>
-
+                    <h4>Terhubung</h4>
                     <a href="CV.pdf" download="CV.pdf" class="btn btn-primary w-full"
-                        style="width: 100%; border-radius: 8px; padding: 0.75rem" aria-label="Download CV">
+                        style="width: 100%; border-radius: 0; padding: 0.75rem" aria-label="Download CV">
                         Dapatkan CV <i data-lucide="download" class="ml-2 icon-sm"></i>
                     </a>
                 </div>
