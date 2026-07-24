@@ -7,17 +7,24 @@
     <title>Christopher Juan Macrio | Web Developer &amp; UI/UX Designer</title>
 
     <!-- SEO & Performance -->
-    <meta name="description" content="Portfolio of Christopher Juan Macrio, Web Developer & UI/UX Designer based in Yogyakarta. Pure Mathematics student at UGM. Explore my experience, projects, and skills.">
-    <meta name="keywords" content="Christopher Juan Macrio, Web Developer, UI/UX Designer, Portfolio, Yogyakarta, UGM, Matematika Murni">
+    <meta name="description"
+        content="Portfolio of Christopher Juan Macrio, Web Developer & UI/UX Designer based in Yogyakarta. Pure Mathematics student at UGM. Explore my experience, projects, and skills.">
+    <meta name="keywords"
+        content="Christopher Juan Macrio, Web Developer, UI/UX Designer, Portfolio, Yogyakarta, UGM, Matematika Murni">
     <meta name="author" content="Christopher Juan Macrio">
     <meta name="theme-color" content="#0b0b0e">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Christopher Juan Macrio | Web Developer & UI/UX Designer">
-    <meta property="og:description" content="Menggabungkan logika matematika dengan desain kreatif untuk membangun solusi digital yang elegan dan berdampak.">
+    <meta property="og:description"
+        content="Menggabungkan logika matematika dengan desain kreatif untuk membangun solusi digital yang elegan dan berdampak.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://azazael-arch.github.io/portofolio">
     <meta property="og:image" content="https://azazael-arch.github.io/portofolio/hero.png">
+
+    <!-- Favicon & Preload -->
+    <link rel="icon" href="hero.png" type="image/png">
+    <link rel="preload" href="hero.png" as="image">
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
@@ -40,7 +47,7 @@
             <div class="loading-bar">
                 <div class="loading-progress"></div>
             </div>
-            <p class="preloader-label">Initializing System...</p>
+            <p class="preloader-label" data-i18n="preloader.label">Memuat Portofolio...</p>
         </div>
     </div>
 
@@ -54,15 +61,22 @@
         <div class="nav-container">
             <a href="#" class="logo">CJM<span>.</span></a>
             <div class="nav-links" id="navLinks">
-                <a href="#about"      data-section="about">Tentang</a>
-                <a href="#experience" data-section="experience">Pengalaman</a>
-                <a href="#skills"     data-section="skills">Keahlian</a>
-                <a href="#projects"   data-section="projects">Portofolio</a>
+                <a href="#about" data-section="about" data-i18n="nav.about">Tentang</a>
+                <a href="#experience" data-section="experience" data-i18n="nav.experience">Pengalaman</a>
+                <a href="#skills" data-section="skills" data-i18n="nav.skills">Keahlian</a>
+                <a href="#projects" data-section="projects" data-i18n="nav.projects">Portofolio</a>
             </div>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=cjuanmacrio06@gmail.com"
-               target="_blank" rel="noopener noreferrer" class="btn btn-outline nav-contact">
-                Hubungi Saya
-            </a>
+            <div class="flex items-center gap-3">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang-set="id">ID</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" data-lang-set="en">EN</button>
+                </div>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=cjuanmacrio06@gmail.com" target="_blank"
+                    rel="noopener noreferrer" class="btn btn-outline nav-contact" data-i18n="nav.contact">
+                    Hubungi Saya
+                </a>
+            </div>
             <button class="hamburger" id="hamburger" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
@@ -71,12 +85,17 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#about">Tentang</a>
-        <a href="#experience">Pengalaman</a>
-        <a href="#skills">Keahlian</a>
-        <a href="#projects">Portofolio</a>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=cjuanmacrio06@gmail.com"
-           target="_blank" rel="noopener noreferrer">Hubungi Saya</a>
+        <a href="#about" data-i18n="nav.about">Tentang</a>
+        <a href="#experience" data-i18n="nav.experience">Pengalaman</a>
+        <a href="#skills" data-i18n="nav.skills">Keahlian</a>
+        <a href="#projects" data-i18n="nav.projects">Portofolio</a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=cjuanmacrio06@gmail.com" target="_blank"
+            rel="noopener noreferrer" data-i18n="nav.contact">Hubungi Saya</a>
+        <div class="lang-switcher mt-4">
+            <button class="lang-btn active" data-lang-set="id">ID</button>
+            <span class="lang-divider">|</span>
+            <button class="lang-btn" data-lang-set="en">EN</button>
+        </div>
     </div>
 
     <!-- Custom Cursor -->
@@ -123,8 +142,8 @@
                     <div class="hero-index-block" data-aos="fade-right">
                         <div class="hero-number">01<sup>+</sup></div>
                         <h1 class="hero-name">Christopher Juan<br>Macrio</h1>
-                        <p class="hero-sub">// Web Developer &amp; UI/UX Designer</p>
-                        <p class="hero-desc">
+                        <p class="hero-sub" data-i18n="hero.sub">Web Developer &amp; UI/UX Designer</p>
+                        <p class="hero-desc" data-i18n="hero.desc">
                             Menggabungkan logika matematika dengan desain kreatif untuk
                             membangun solusi digital yang elegan dan berdampak.
                         </p>
@@ -145,33 +164,36 @@
 
                         <!-- Card: Education -->
                         <div class="hero-float-card shard-sm">
-                            <div class="hero-float-card-label">// Edu_01 — Universitas</div>
-                            <div class="hero-float-card-value">S1 Matematika Murni</div>
-                            <div class="hero-float-card-sub">Universitas Gadjah Mada — SNBP 2026</div>
+                            <div class="hero-float-card-label" data-i18n="hero.edu1_label">Pendidikan — Universitas
+                            </div>
+                            <div class="hero-float-card-value" data-i18n="hero.edu1_val">S1 Matematika Murni</div>
+                            <div class="hero-float-card-sub" data-i18n="hero.edu1_sub">Universitas Gadjah Mada — SNBP
+                                2026</div>
                         </div>
 
                         <!-- Card: School -->
                         <div class="hero-float-card shard-sm">
-                            <div class="hero-float-card-label">// Edu_02 — SMA</div>
-                            <div class="hero-float-card-value">MIPA</div>
-                            <div class="hero-float-card-sub">SMAN 6 Yogyakarta — Jul 2023 – Jun 2026</div>
+                            <div class="hero-float-card-label" data-i18n="hero.edu2_label">Pendidikan — SMA</div>
+                            <div class="hero-float-card-value" data-i18n="hero.edu2_val">MIPA</div>
+                            <div class="hero-float-card-sub" data-i18n="hero.edu2_sub">SMAN 6 Yogyakarta — Jul 2023 –
+                                Jun 2026</div>
                         </div>
 
                         <!-- Card: Quick stats -->
                         <div class="hero-float-card shard-sm">
-                            <div class="hero-float-card-label">// Attr — Quick Stats</div>
+                            <div class="hero-float-card-label" data-i18n="hero.stats_label">Ringkasan</div>
                             <div class="hero-stat-row">
                                 <div class="hero-stat-item">
                                     <div class="hero-stat-val">2<span>+</span></div>
-                                    <div class="hero-stat-lbl">Thn Exp</div>
+                                    <div class="hero-stat-lbl" data-i18n="hero.stat1_lbl">Thn Exp</div>
                                 </div>
                                 <div class="hero-stat-item">
                                     <div class="hero-stat-val">5<span>+</span></div>
-                                    <div class="hero-stat-lbl">Project</div>
+                                    <div class="hero-stat-lbl" data-i18n="hero.stat2_lbl">Project</div>
                                 </div>
                                 <div class="hero-stat-item">
                                     <div class="hero-stat-val">12<span>+</span></div>
-                                    <div class="hero-stat-lbl">Tim</div>
+                                    <div class="hero-stat-lbl" data-i18n="hero.stat3_lbl">Tim</div>
                                 </div>
                             </div>
                         </div>
@@ -181,18 +203,13 @@
                     <!-- Center: Hero portrait (framed) -->
                     <div class="hero-focal" id="heroFocal">
                         <div class="hero-focal-frame">
-                            <img
-                                src="hero.png"
-                                alt="Christopher Juan Macrio"
-                                class="hero-focal-img"
-                                id="heroImg"
-                                draggable="false"
-                            >
+                            <img src="hero.png" alt="Christopher Juan Macrio" class="hero-focal-img" id="heroImg"
+                                draggable="false">
                             <div class="hero-focal-overlay"></div>
                             <div class="hero-focal-corners"></div>
                             <div class="hero-focal-label">
                                 <span class="hero-focal-label-name">Christopher Juan Macrio</span>
-                                <span class="hero-focal-label-role">// Web Dev &amp; UI/UX</span>
+                                <span class="hero-focal-label-role">Web Dev &amp; UI/UX</span>
                             </div>
                         </div>
                     </div>
@@ -202,8 +219,8 @@
 
                         <!-- Status card -->
                         <div class="hero-float-card shard-sm">
-                            <div class="hero-float-card-label">// Stat — Status</div>
-                            <div class="status-pulse">
+                            <div class="hero-float-card-label" data-i18n="hero.status_label">Status</div>
+                            <div class="status-pulse" data-i18n-html="hero.status_val">
                                 <span class="status-dot"></span>
                                 Open to Opportunities
                             </div>
@@ -214,14 +231,14 @@
 
                         <!-- Role card -->
                         <div class="hero-float-card shard-sm">
-                            <div class="hero-float-card-label">// Role — Current</div>
-                            <div class="hero-float-card-value">Freelance Web Dev</div>
-                            <div class="hero-float-card-sub">Lead Dev &amp; Coordinator</div>
+                            <div class="hero-float-card-label" data-i18n="hero.role_label">Peran Saat Ini</div>
+                            <div class="hero-float-card-value" data-i18n="hero.role_val">Freelance Web Dev</div>
+                            <div class="hero-float-card-sub" data-i18n="hero.role_sub">Lead Dev &amp; Coordinator</div>
                         </div>
 
                         <!-- Skill tags card -->
                         <div class="hero-float-card shard-sm">
-                            <div class="hero-float-card-label">// Skill — Core Stack</div>
+                            <div class="hero-float-card-label" data-i18n="hero.stack_label">Teknologi Utama</div>
                             <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.4rem;">
                                 <span class="badge badge-primary">HTML/CSS</span>
                                 <span class="badge badge-primary">C++</span>
@@ -237,18 +254,18 @@
                 <!-- BOTTOM BAR: Actions + Scroll hint -->
                 <div class="hero-bottom-bar" data-aos="fade-up" data-aos-delay="400">
                     <div class="hero-actions">
-                        <a href="#experience" class="btn btn-primary">
+                        <a href="#experience" class="btn btn-primary" data-i18n-html="hero.btn_exp">
                             Lihat Perjalanan
                             <i data-lucide="arrow-right" class="icon-sm ml-2"></i>
                         </a>
-                        <a href="#projects" class="btn btn-glass">Lihat Project</a>
-                        <a href="CV.pdf" download="CV.pdf" class="btn btn-outline">
+                        <a href="#projects" class="btn btn-glass" data-i18n="hero.btn_proj">Lihat Project</a>
+                        <a href="CV.pdf" download="CV.pdf" class="btn btn-outline" data-i18n-html="hero.btn_cv">
                             CV <i data-lucide="download" class="icon-sm ml-2"></i>
                         </a>
                     </div>
                     <div class="scroll-indicator">
                         <div class="scroll-indicator-line"></div>
-                        <span>Scroll Down</span>
+                        <span data-i18n="hero.scroll">Scroll Down</span>
                     </div>
                 </div>
 
@@ -264,8 +281,11 @@
 
                 <div class="section-header" data-aos="fade-right">
                     <div>
-                        <p class="section-label">// 02 + Attributes</p>
-                        <h2 class="section-title">Tentang Saya</h2>
+                        <p class="section-label" data-i18n-html="about.sec_label">
+                            <i data-lucide="user" class="icon-sm inline-block mr-2"></i>
+                            02 · Tentang
+                        </p>
+                        <h2 class="section-title" data-i18n="about.sec_title">Tentang Saya</h2>
                     </div>
                     <div class="line"></div>
                 </div>
@@ -277,20 +297,20 @@
                     <!-- Left: text -->
                     <div class="about-left" data-aos="fade-up">
                         <div class="about-accent-line"></div>
-                        <p>
+                        <p data-i18n-html="about.p1">
                             Saya adalah seorang <strong class="text-white">Web Developer</strong> dan
                             <strong class="text-white">UI/UX Designer</strong> berbasis di Yogyakarta,
                             dengan passion kuat terhadap teknologi dan desain visual.
                         </p>
-                        <p>
+                        <p data-i18n-html="about.p2">
                             Dengan pengalaman memimpin tim produksi teknis dan proyek pengembangan
                             perangkat lunak, saya terbiasa mengoordinasikan workflow kompleks dan
                             menghasilkan output berkualitas tinggi. Saya percaya bahwa
                             <strong class="text-white">kode yang baik</strong> harusnya seindah desainnya.
                         </p>
-                        <p>
+                        <p data-i18n-html="about.p3">
                             Saat ini saya telah diterima di <strong class="text-white">Universitas Gadjah
-                            Mada (UGM)</strong> untuk <strong class="text-white">S1 Matematika Murni</strong>
+                                Mada (UGM)</strong> untuk <strong class="text-white">S1 Matematika Murni</strong>
                             melalui jalur <span class="text-gradient">SNBP 2026</span>, di mana saya akan
                             mendalami logika matematika dan algoritma yang memperkuat fondasi saya dalam
                             dunia teknologi.
@@ -302,36 +322,36 @@
                         <div class="stats-cinematic-grid">
 
                             <div class="stat-cin-card">
-                                <div class="stat-cin-label">ATTR_01 // EXP</div>
+                                <div class="stat-cin-label" data-i18n="about.lbl1">Pengalaman</div>
                                 <div class="stat-cin-number" data-count="2">0<span>+</span></div>
-                                <div class="stat-cin-desc">Tahun Pengalaman</div>
+                                <div class="stat-cin-desc" data-i18n="about.desc1">Tahun Pengalaman</div>
                                 <div class="stat-cin-bar">
                                     <div class="stat-cin-bar-fill" data-width="40" style="width:0%"></div>
                                 </div>
                             </div>
 
                             <div class="stat-cin-card">
-                                <div class="stat-cin-label">ATTR_02 // PROJ</div>
+                                <div class="stat-cin-label" data-i18n="about.lbl2">Proyek</div>
                                 <div class="stat-cin-number" data-count="5">0<span>+</span></div>
-                                <div class="stat-cin-desc">Project Selesai</div>
+                                <div class="stat-cin-desc" data-i18n="about.desc2">Project Selesai</div>
                                 <div class="stat-cin-bar">
                                     <div class="stat-cin-bar-fill" data-width="65" style="width:0%"></div>
                                 </div>
                             </div>
 
                             <div class="stat-cin-card">
-                                <div class="stat-cin-label">ATTR_03 // MGMT</div>
+                                <div class="stat-cin-label" data-i18n="about.lbl3">Manajemen Tim</div>
                                 <div class="stat-cin-number" data-count="12">0<span>+</span></div>
-                                <div class="stat-cin-desc">Tim Dikelola</div>
+                                <div class="stat-cin-desc" data-i18n="about.desc3">Tim Dikelola</div>
                                 <div class="stat-cin-bar">
                                     <div class="stat-cin-bar-fill" data-width="80" style="width:0%"></div>
                                 </div>
                             </div>
 
                             <div class="stat-cin-card">
-                                <div class="stat-cin-label">ATTR_04 // AWRD</div>
+                                <div class="stat-cin-label" data-i18n="about.lbl4">Penghargaan</div>
                                 <div class="stat-cin-number" data-count="3">0<span>+</span></div>
-                                <div class="stat-cin-desc">Penghargaan</div>
+                                <div class="stat-cin-desc" data-i18n="about.desc4">Penghargaan</div>
                                 <div class="stat-cin-bar">
                                     <div class="stat-cin-bar-fill" data-width="50" style="width:0%"></div>
                                 </div>
@@ -353,8 +373,11 @@
 
                 <div class="section-header" data-aos="fade-right">
                     <div>
-                        <p class="section-label">// 03 + Career &amp; Education</p>
-                        <h2 class="section-title">Pengalaman &amp; Pendidikan</h2>
+                        <p class="section-label" data-i18n-html="exp.sec_label">
+                            <i data-lucide="briefcase" class="icon-sm inline-block mr-2"></i>
+                            03 · Karir &amp; Pendidikan
+                        </p>
+                        <h2 class="section-title" data-i18n="exp.sec_title">Pengalaman &amp; Pendidikan</h2>
                     </div>
                     <div class="line"></div>
                 </div>
@@ -367,16 +390,25 @@
                         <div class="timeline-content">
                             <div class="timeline-header">
                                 <div>
-                                    <h3 class="text-xl font-bold text-white">Freelance Web Developer</h3>
-                                    <p class="text-gradient font-medium mt-1" style="font-size:0.85rem;">
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="globe" class="text-primary icon-sm"></i>
+                                        <h3 class="text-xl font-bold text-white" data-i18n="exp.job1_title">Freelance
+                                            Web Developer</h3>
+                                    </div>
+                                    <p class="text-gradient font-medium mt-1" style="font-size:0.85rem;"
+                                        data-i18n="exp.job1_sub">
                                         Proyek Pembuatan Website PT (Corporate)
                                     </p>
                                 </div>
                                 <span class="badge badge-primary">2025 – NOW</span>
                             </div>
                             <ul class="styled-list">
-                                <li>Merancang dan membangun website fungsional dengan antarmuka pengguna yang modern khusus untuk kebutuhan perusahaan.</li>
-                                <li>Mengelola deployment dan performa serta memastikan responsivitas website agar optimal di berbagai perangkat.</li>
+                                <li data-i18n="exp.job1_b1">Merancang dan membangun website fungsional dengan antarmuka
+                                    pengguna yang modern
+                                    khusus untuk kebutuhan perusahaan.</li>
+                                <li data-i18n="exp.job1_b2">Mengelola deployment dan performa serta memastikan
+                                    responsivitas website agar
+                                    optimal di berbagai perangkat.</li>
                             </ul>
                         </div>
                     </div>
@@ -389,17 +421,21 @@
                                 <div>
                                     <div class="flex items-center gap-2">
                                         <i data-lucide="graduation-cap" class="text-primary icon-sm"></i>
-                                        <h3 class="text-xl font-bold text-white">S1 Matematika Murni</h3>
+                                        <h3 class="text-xl font-bold text-white" data-i18n="exp.edu1_title">S1
+                                            Matematika Murni</h3>
                                     </div>
-                                    <p class="text-gradient font-medium mt-1" style="font-size:0.85rem;">
+                                    <p class="text-gradient font-medium mt-1" style="font-size:0.85rem;"
+                                        data-i18n="exp.edu1_sub">
                                         Universitas Gadjah Mada (UGM), Yogyakarta
                                     </p>
                                 </div>
                                 <span class="badge badge-primary">Jul 2026 – NOW</span>
                             </div>
                             <ul class="styled-list">
-                                <li>Lolos jalur SNBP 2026 — seleksi berbasis prestasi nasional.</li>
-                                <li>Fokus pada logika matematika dan algoritma yang memperkuat fondasi teknologi.</li>
+                                <li data-i18n="exp.edu1_b1">Lolos jalur SNBP 2026 — seleksi berbasis prestasi nasional.
+                                </li>
+                                <li data-i18n="exp.edu1_b2">Fokus pada logika matematika dan algoritma yang memperkuat
+                                    fondasi teknologi.</li>
                             </ul>
                         </div>
                     </div>
@@ -410,16 +446,25 @@
                         <div class="timeline-content">
                             <div class="timeline-header">
                                 <div>
-                                    <h3 class="text-xl font-bold text-white">Lead Technical &amp; Coordinator</h3>
-                                    <p class="text-gradient font-medium mt-1" style="font-size:0.85rem;">
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="clapperboard" class="text-primary icon-sm"></i>
+                                        <h3 class="text-xl font-bold text-white" data-i18n="exp.job2_title">Lead
+                                            Technical &amp; Coordinator</h3>
+                                    </div>
+                                    <p class="text-gradient font-medium mt-1" style="font-size:0.85rem;"
+                                        data-i18n="exp.job2_sub">
                                         Multimedia Projects, Yogyakarta
                                     </p>
                                 </div>
                                 <span class="badge badge-primary">Okt 2025 – Apr 2026</span>
                             </div>
                             <ul class="styled-list">
-                                <li>Mengarahkan produksi teknis dan pascaproduksi untuk proyek video high-fidelity dan film pendek.</li>
-                                <li>Mengelola tim kreatif 12+ orang, mengawasi lini masa produksi, dan memastikan konsistensi visual.</li>
+                                <li data-i18n="exp.job2_b1">Mengarahkan produksi teknis dan pascaproduksi untuk proyek
+                                    video high-fidelity dan
+                                    film pendek.</li>
+                                <li data-i18n="exp.job2_b2">Mengelola tim kreatif 12+ orang, mengawasi lini masa
+                                    produksi, dan memastikan
+                                    konsistensi visual.</li>
                             </ul>
                         </div>
                     </div>
@@ -430,17 +475,29 @@
                         <div class="timeline-content">
                             <div class="timeline-header">
                                 <div>
-                                    <h3 class="text-xl font-bold text-white">Lead Developer &amp; Team Coordinator</h3>
-                                    <p class="text-gradient font-medium mt-1" style="font-size:0.85rem;">
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="code-2" class="text-primary icon-sm"></i>
+                                        <h3 class="text-xl font-bold text-white" data-i18n="exp.job3_title">Lead
+                                            Developer &amp; Team Coordinator
+                                        </h3>
+                                    </div>
+                                    <p class="text-gradient font-medium mt-1" style="font-size:0.85rem;"
+                                        data-i18n="exp.job3_sub">
                                         IT Projects, Yogyakarta
                                     </p>
                                 </div>
                                 <span class="badge badge-primary">Agu 2024 – Feb 2026</span>
                             </div>
                             <ul class="styled-list">
-                                <li>Mengoordinasikan persyaratan sistem dan distribusi tugas untuk proyek pengembangan perangkat lunak kolaboratif.</li>
-                                <li>Memfasilitasi komunikasi antara fase desain dan pengembangan untuk memastikan produk akhir yang lancar.</li>
-                                <li>Mengelola kontrol versi dan konfigurasi lingkungan untuk lingkungan pengkodean berbasis tim.</li>
+                                <li data-i18n="exp.job3_b1">Mengoordinasikan persyaratan sistem dan distribusi tugas
+                                    untuk proyek pengembangan
+                                    perangkat lunak kolaboratif.</li>
+                                <li data-i18n="exp.job3_b2">Memfasilitasi komunikasi antara fase desain dan pengembangan
+                                    untuk memastikan produk
+                                    akhir yang lancar.</li>
+                                <li data-i18n="exp.job3_b3">Mengelola kontrol versi dan konfigurasi lingkungan untuk
+                                    lingkungan pengkodean
+                                    berbasis tim.</li>
                             </ul>
                         </div>
                     </div>
@@ -453,16 +510,18 @@
                                 <div>
                                     <div class="flex items-center gap-2">
                                         <i data-lucide="book-open" class="text-primary icon-sm"></i>
-                                        <h3 class="text-xl font-bold text-white">MIPA</h3>
+                                        <h3 class="text-xl font-bold text-white" data-i18n="exp.edu2_title">MIPA</h3>
                                     </div>
-                                    <p class="text-gradient font-medium mt-1" style="font-size:0.85rem;">
+                                    <p class="text-gradient font-medium mt-1" style="font-size:0.85rem;"
+                                        data-i18n="exp.edu2_sub">
                                         SMA Negeri 6 Yogyakarta
                                     </p>
                                 </div>
                                 <span class="badge badge-primary">Jul 2023 – Jun 2026</span>
                             </div>
                             <ul class="styled-list">
-                                <li>Fokus pada penguatan dasar Informatika dan Matematika tingkat lanjut.</li>
+                                <li data-i18n="exp.edu2_b1">Fokus pada penguatan dasar Informatika dan Matematika
+                                    tingkat lanjut.</li>
                             </ul>
                         </div>
                     </div>
@@ -480,8 +539,11 @@
 
                 <div class="section-header" data-aos="fade-right">
                     <div>
-                        <p class="section-label">// 04 + Skill Grid</p>
-                        <h2 class="section-title">Keterampilan Teknis</h2>
+                        <p class="section-label" data-i18n-html="skills.sec_label">
+                            <i data-lucide="cpu" class="icon-sm inline-block mr-2"></i>
+                            04 · Keahlian
+                        </p>
+                        <h2 class="section-title" data-i18n="skills.sec_title">Keterampilan Teknis</h2>
                     </div>
                     <div class="line"></div>
                 </div>
@@ -495,7 +557,7 @@
                                 <i data-lucide="code-2"></i>
                             </div>
                             <div>
-                                <p class="skill-module-label">MODULE_01</p>
+                                <p class="skill-module-label" data-i18n="skills.mod1">Modul 01</p>
                                 <h3 class="skill-card-name">Web &amp; Mobile Dev</h3>
                             </div>
                             <div class="skill-card-status-badge">ACTIVE</div>
@@ -546,11 +608,12 @@
                     <!-- MODULE 02: Programming & Logic -->
                     <div class="skill-card-cin" data-aos="fade-up" data-aos-delay="120">
                         <div class="skill-card-header-cin">
-                            <div class="skill-icon-cin" style="color: var(--accent); border-color: rgba(255,107,53,0.25); background: rgba(255,107,53,0.07);">
+                            <div class="skill-icon-cin"
+                                style="color: var(--accent); border-color: rgba(255,107,53,0.25); background: rgba(255,107,53,0.07);">
                                 <i data-lucide="cpu"></i>
                             </div>
                             <div>
-                                <p class="skill-module-label">MODULE_02</p>
+                                <p class="skill-module-label" data-i18n="skills.mod2">Modul 02</p>
                                 <h3 class="skill-card-name">Programming &amp; Logic</h3>
                             </div>
                             <div class="skill-card-status-badge">ACTIVE</div>
@@ -601,11 +664,12 @@
                     <!-- MODULE 03: Design & Tools -->
                     <div class="skill-card-cin" data-aos="fade-up" data-aos-delay="240">
                         <div class="skill-card-header-cin">
-                            <div class="skill-icon-cin" style="color: #c084fc; border-color: rgba(192,132,252,0.25); background: rgba(192,132,252,0.07);">
+                            <div class="skill-icon-cin"
+                                style="color: #c084fc; border-color: rgba(192,132,252,0.25); background: rgba(192,132,252,0.07);">
                                 <i data-lucide="pen-tool"></i>
                             </div>
                             <div>
-                                <p class="skill-module-label">MODULE_03</p>
+                                <p class="skill-module-label" data-i18n="skills.mod3">Modul 03</p>
                                 <h3 class="skill-card-name">Design &amp; Tools</h3>
                             </div>
                             <div class="skill-card-status-badge">ACTIVE</div>
@@ -659,16 +723,16 @@
                 <div class="lang-card-cin" data-aos="fade-up">
                     <div class="lang-card-icon">
                         <i data-lucide="languages"></i>
-                        <h3 class="font-bold text-white text-lg font-display">Bahasa</h3>
+                        <h3 class="font-bold text-white text-lg font-display" data-i18n="skills.lang_title">Bahasa</h3>
                     </div>
                     <div class="lang-items-cin">
                         <div>
-                            <p class="lang-item-cin-label">Bahasa Indonesia</p>
-                            <p class="lang-item-cin-level">Native Speaker</p>
+                            <p class="lang-item-cin-label" data-i18n="skills.lang1_name">Bahasa Indonesia</p>
+                            <p class="lang-item-cin-level" data-i18n="skills.lang1_lvl">Native Speaker</p>
                         </div>
                         <div>
-                            <p class="lang-item-cin-label">Bahasa Inggris</p>
-                            <p class="lang-item-cin-level">Professional Working</p>
+                            <p class="lang-item-cin-label" data-i18n="skills.lang2_name">Bahasa Inggris</p>
+                            <p class="lang-item-cin-level" data-i18n="skills.lang2_lvl">Professional Working</p>
                         </div>
                     </div>
                 </div>
@@ -685,61 +749,61 @@
 
                 <div class="section-header" data-aos="fade-right">
                     <div>
-                        <p class="section-label">// 05 + Showcase &amp; Achievements</p>
-                        <h2 class="section-title">Project Utama &amp; Penghargaan</h2>
+                        <p class="section-label" data-i18n-html="proj.sec_label">
+                            <i data-lucide="folder-open" class="icon-sm inline-block mr-2"></i>
+                            05 · Portofolio &amp; Pencapaian
+                        </p>
+                        <h2 class="section-title" data-i18n="proj.sec_title">Project Utama &amp; Penghargaan</h2>
                     </div>
                     <div class="line"></div>
                 </div>
 
                 <!-- ── FEATURED PROJECT BANNER ── -->
                 <div class="featured-project-banner shard-wide" data-aos="fade-up">
-                    <img
-                        src="https://img.youtube.com/vi/cWrCfAWlgcg/maxresdefault.jpg"
-                        alt="Membasuh Memori — Short Film"
-                        class="featured-img"
-                    >
+                    <img src="https://img.youtube.com/vi/cWrCfAWlgcg/maxresdefault.jpg"
+                        alt="Membasuh Memori — Short Film" class="featured-img">
                     <div class="featured-content">
                         <!-- Left: info -->
                         <div class="featured-content-left">
                             <div class="featured-number-badge">1st.</div>
-                            <div class="featured-type-tag">
+                            <div class="featured-type-tag" data-i18n-html="proj.banner_tag">
                                 <i data-lucide="film" class="icon-sm"></i>
                                 Short Movie — Featured Project
                             </div>
                             <h3 class="featured-title">Membasuh Memori</h3>
-                            <p class="featured-desc">
-                                Film pendek produksi tim kreatif dengan high-fidelity visual editing
-                                dan storytelling berkualitas sinematik. Dikerjakan bersama tim 12+
-                                orang sebagai Lead Technical &amp; Coordinator.
+                            <p class="featured-desc" data-i18n="proj.desc">
+                                Film pendek produksi tim kreatif dengan visual editing berkualitas tinggi
+                                dan storytelling sinematik. Berkontribusi sebagai Asisten Post-Produksi,
+                                Dokumentasi, dan Pembuatan Laporan bersama tim 12+ orang.
                             </p>
                             <div class="featured-stats-row">
                                 <div class="featured-stat">
-                                    <span class="featured-stat-label">Role</span>
-                                    <span class="featured-stat-value">Lead Technical</span>
+                                    <span class="featured-stat-label" data-i18n="proj.role_lbl">Role</span>
+                                    <span class="featured-stat-value" data-i18n="proj.role_val">Asisten
+                                        Post-Produksi</span>
                                 </div>
                                 <div class="featured-stat">
-                                    <span class="featured-stat-label">Tahun</span>
+                                    <span class="featured-stat-label" data-i18n="proj.year_lbl">Tahun</span>
                                     <span class="featured-stat-value">2025 – 2026</span>
                                 </div>
                                 <div class="featured-stat">
-                                    <span class="featured-stat-label">Tim</span>
-                                    <span class="featured-stat-value">12+ Orang</span>
+                                    <span class="featured-stat-label" data-i18n="proj.team_lbl">Tim</span>
+                                    <span class="featured-stat-value" data-i18n="proj.team_val">12+ Orang</span>
                                 </div>
                                 <div class="featured-stat">
-                                    <span class="featured-stat-label">Platform</span>
+                                    <span class="featured-stat-label" data-i18n="proj.plat_lbl">Platform</span>
                                     <span class="featured-stat-value">YouTube</span>
                                 </div>
                             </div>
                             <div class="featured-tags">
-                                <span class="featured-tag">Video Production</span>
-                                <span class="featured-tag">Post-Production</span>
-                                <span class="featured-tag">Team Leadership</span>
-                                <span class="featured-tag">Cinematography</span>
+                                <span class="featured-tag" data-i18n="proj.tag1">Post-Production</span>
+                                <span class="featured-tag" data-i18n="proj.tag2">Dokumentasi</span>
+                                <span class="featured-tag" data-i18n="proj.tag3">Pembuatan Laporan</span>
                             </div>
                             <a href="https://youtu.be/cWrCfAWlgcg" target="_blank" rel="noopener noreferrer"
-                               class="btn btn-primary">
+                                class="btn btn-primary" data-i18n-html="proj.btn_watch">
                                 <i data-lucide="play" class="icon-sm mr-2"></i>
-                                Watch Movie ↗
+                                Tonton ↗
                             </a>
                         </div>
 
@@ -747,18 +811,69 @@
                         <div class="featured-content-right">
                             <div class="featured-rank-badge">
                                 <div class="featured-rank-number">01<span>st</span></div>
-                                <div class="featured-rank-label">// Featured</div>
+                                <div class="featured-rank-label" data-i18n="proj.badge_featured">Unggulan</div>
                             </div>
                             <span class="badge badge-gold">High-Fidelity</span>
                         </div>
                     </div>
                 </div><!-- /.featured-project-banner -->
 
+                <!-- ── CORPORATE CLIENTS & PROJECTS ── -->
+                <div style="margin-top: 3.5rem;" data-aos="fade-up">
+                    <h3 class="font-mono text-primary text-sm mb-6 tracking-widest uppercase"
+                        data-i18n-html="proj.corporate_head">
+                        <i data-lucide="building-2" class="icon-sm mr-2 inline-block"></i>
+                        Klien Corporate &amp; Proyek Industri
+                    </h3>
+
+                    <div class="client-showcase-grid">
+                        <!-- Client Item: PT. Sriwijaya Trans Indo -->
+                        <div class="client-card shard-sm">
+                            <div class="client-card-header">
+                                <div class="client-badge">
+                                    <i data-lucide="check-circle-2" class="icon-sm text-primary mr-1 inline-block"></i>
+                                    <span data-i18n="proj.client_tag">Corporate Client</span>
+                                </div>
+                                <span class="badge badge-primary">Mar 2026 – Mei 2026</span>
+                            </div>
+
+                            <div class="client-card-body">
+                                <div class="client-logo-icon">
+                                    <i data-lucide="building"></i>
+                                </div>
+                                <div class="client-info">
+                                    <h4 class="client-name">PT. Sriwijaya Trans Indo</h4>
+                                    <p class="client-role" data-i18n="proj.client1_role">
+                                        Pembuatan &amp; Pengembangan Website Perusahaan (Corporate Website Development)
+                                    </p>
+                                    <p class="client-desc" data-i18n="proj.client1_desc">
+                                        Mengembangkan website resmi perusahaan transportasi &amp; logistik dengan tata
+                                        letak responsif, performa tinggi, dan antarmuka bisnis yang profesional.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="client-card-footer">
+                                <div class="client-tags">
+                                    <span class="featured-tag">Web Development</span>
+                                    <span class="featured-tag">UI/UX Design</span>
+                                    <span class="featured-tag">Corporate</span>
+                                </div>
+                                <a href="https://sriwijayatransindo.id/" target="_blank" rel="noopener noreferrer"
+                                    class="btn btn-outline client-btn" data-i18n-html="proj.client1_btn">
+                                    Kunjungi Website <i data-lucide="external-link" class="icon-sm ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- ── AWARDS / MILESTONES ── -->
-                <div style="margin-top: 3rem;">
-                    <h3 class="font-mono text-primary text-sm mb-6 tracking-widest uppercase" data-aos="fade-right">
+                <div style="margin-top: 3.5rem;">
+                    <h3 class="font-mono text-primary text-sm mb-6 tracking-widest uppercase" data-aos="fade-right"
+                        data-i18n-html="proj.awards_head">
                         <i data-lucide="award" class="icon-sm mr-2 inline-block"></i>
-                        // Milestones &amp; Awards
+                        Pencapaian &amp; Penghargaan
                     </h3>
 
                     <div class="awards-cinematic">
@@ -769,8 +884,10 @@
                                 <i data-lucide="trophy"></i>
                             </div>
                             <div class="award-cin-content">
-                                <h4 class="award-cin-title">Finalis OSN-P Informatika</h4>
-                                <p class="award-cin-desc">Kompetitor tingkat regional dalam pemecahan masalah algoritma dan pemrograman kompetitif.</p>
+                                <h4 class="award-cin-title" data-i18n="proj.awd1_title">Finalis OSN-P Informatika</h4>
+                                <p class="award-cin-desc" data-i18n="proj.awd1_desc">Kompetitor tingkat regional dalam
+                                    pemecahan masalah algoritma
+                                    dan pemrograman kompetitif.</p>
                             </div>
                         </div>
 
@@ -780,8 +897,11 @@
                                 <i data-lucide="medal"></i>
                             </div>
                             <div class="award-cin-content">
-                                <h4 class="award-cin-title">Participant Omah TI Academy 2026</h4>
-                                <p class="award-cin-desc">Berkompetisi dalam ajang teknologi informasi bergengsi di Universitas Gadjah Mada.</p>
+                                <h4 class="award-cin-title" data-i18n="proj.awd2_title">Participant Omah TI Academy 2026
+                                </h4>
+                                <p class="award-cin-desc" data-i18n="proj.awd2_desc">Berkompetisi dalam ajang teknologi
+                                    informasi bergengsi di
+                                    Universitas Gadjah Mada.</p>
                             </div>
                         </div>
 
@@ -791,8 +911,10 @@
                                 <i data-lucide="star"></i>
                             </div>
                             <div class="award-cin-content">
-                                <h4 class="award-cin-title">Lolos SNBP UGM</h4>
-                                <p class="award-cin-desc">Diterima di Universitas Gadjah Mada melalui jalur prestasi nasional (SNBP 2026) untuk program Matematika Murni.</p>
+                                <h4 class="award-cin-title" data-i18n="proj.awd3_title">Lolos SNBP UGM</h4>
+                                <p class="award-cin-desc" data-i18n="proj.awd3_desc">Diterima di Universitas Gadjah Mada
+                                    melalui jalur prestasi
+                                    nasional (SNBP 2026) untuk program Matematika Murni.</p>
                             </div>
                         </div>
 
@@ -817,7 +939,7 @@
                 <div class="footer-contact-block" data-aos="fade-right">
                     <div class="footer-logo-area">
                         <a href="#" class="logo">CJM<span>.</span></a>
-                        <p class="text-sm text-gray leading-relaxed mt-2">
+                        <p class="text-sm text-gray leading-relaxed mt-2" data-i18n-html="footer.sub">
                             Web Developer &amp; UI/UX Designer<br>
                             Pure Mathematics, UGM · Yogyakarta
                         </p>
@@ -827,22 +949,30 @@
                         <a href="mailto:cjuanmacrio06@gmail.com" class="footer-contact-item">
                             <div class="footer-contact-icon"><i data-lucide="mail"></i></div>
                             <div>
-                                <div class="footer-contact-label">Email</div>
+                                <div class="footer-contact-label" data-i18n="footer.contact_email">Email</div>
                                 <div class="footer-contact-value">cjuanmacrio06@gmail.com</div>
                             </div>
                         </a>
                         <div class="footer-contact-item">
                             <div class="footer-contact-icon"><i data-lucide="map-pin"></i></div>
                             <div>
-                                <div class="footer-contact-label">Lokasi</div>
-                                <div class="footer-contact-value">Yogyakarta, Indonesia</div>
+                                <div class="footer-contact-label" data-i18n="footer.contact_loc">Lokasi</div>
+                                <div class="footer-contact-value" data-i18n="footer.loc_val">Yogyakarta, Indonesia</div>
                             </div>
                         </div>
                         <a href="https://github.com/azazael-arch" target="_blank" rel="noopener noreferrer"
-                           class="footer-contact-item">
-                            <div class="footer-contact-icon"><i data-lucide="github"></i></div>
+                            class="footer-contact-item">
+                            <div class="footer-contact-icon">
+                                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                                    </path>
+                                    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                                </svg>
+                            </div>
                             <div>
-                                <div class="footer-contact-label">GitHub</div>
+                                <div class="footer-contact-label" data-i18n="footer.contact_gh">GitHub</div>
                                 <div class="footer-contact-value">github.com/azazael-arch</div>
                             </div>
                         </a>
@@ -850,21 +980,22 @@
 
                     <nav class="footer-nav-row">
                         <a href="#home">Home</a>
-                        <a href="#about">Tentang</a>
-                        <a href="#experience">Pengalaman</a>
-                        <a href="#skills">Keahlian</a>
-                        <a href="#projects">Portofolio</a>
+                        <a href="#about" data-i18n="nav.about">Tentang</a>
+                        <a href="#experience" data-i18n="nav.experience">Pengalaman</a>
+                        <a href="#skills" data-i18n="nav.skills">Keahlian</a>
+                        <a href="#projects" data-i18n="nav.projects">Portofolio</a>
                     </nav>
                 </div>
 
                 <!-- Right: Heroic quote + CTA -->
                 <div class="footer-quote-block" data-aos="fade-left">
                     <div>
-                        <p class="font-mono text-primary text-xs tracking-widest uppercase mb-4">
-                            // Heroic Lines
+                        <p class="font-mono text-primary text-xs tracking-widest uppercase mb-4"
+                            data-i18n="footer.closing_title">
+                            Kata Penutup
                         </p>
                         <div class="footer-quote">
-                            <p class="footer-quote-text">
+                            <p class="footer-quote-text" data-i18n-html="footer.quote">
                                 Menggabungkan<br>
                                 Logika Matematika<br>
                                 Dengan Desain Kreatif.
@@ -874,12 +1005,12 @@
                     </div>
 
                     <div class="footer-cta-area">
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=cjuanmacrio06@gmail.com"
-                           target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=cjuanmacrio06@gmail.com" target="_blank"
+                            rel="noopener noreferrer" class="btn btn-primary" data-i18n-html="footer.btn_contact">
                             <i data-lucide="mail" class="icon-sm mr-2"></i>
                             Hubungi Saya
                         </a>
-                        <a href="CV.pdf" download="CV.pdf" class="btn btn-outline">
+                        <a href="CV.pdf" download="CV.pdf" class="btn btn-outline" data-i18n-html="footer.btn_cv">
                             Unduh CV <i data-lucide="download" class="icon-sm ml-2"></i>
                         </a>
                     </div>
@@ -908,4 +1039,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>

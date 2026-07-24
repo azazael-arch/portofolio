@@ -447,4 +447,272 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     });
 
+    // ─────────────────────────────────────────────
+    // LANGUAGE SWITCHER SYSTEM (ID / EN)
+    // ─────────────────────────────────────────────
+    const translations = {
+        id: {
+            "nav.about": "Tentang",
+            "nav.experience": "Pengalaman",
+            "nav.skills": "Keahlian",
+            "nav.projects": "Portofolio",
+            "nav.contact": "Hubungi Saya",
+            "preloader.label": "Memuat Portofolio...",
+            "hero.sub": "Web Developer & UI/UX Designer",
+            "hero.desc": "Menggabungkan logika matematika dengan desain kreatif untuk membangun solusi digital yang elegan dan berdampak.",
+            "hero.edu1_label": "Pendidikan — Universitas",
+            "hero.edu1_val": "S1 Matematika Murni",
+            "hero.edu1_sub": "Universitas Gadjah Mada — SNBP 2026",
+            "hero.edu2_label": "Pendidikan — SMA",
+            "hero.edu2_val": "MIPA",
+            "hero.edu2_sub": "SMAN 6 Yogyakarta — Jul 2023 – Jun 2026",
+            "hero.stats_label": "Ringkasan",
+            "hero.stat1_lbl": "Thn Exp",
+            "hero.stat2_lbl": "Project",
+            "hero.stat3_lbl": "Tim",
+            "hero.status_label": "Status",
+            "hero.status_val": `<span class="status-dot"></span> Open to Opportunities`,
+            "hero.role_label": "Peran Saat Ini",
+            "hero.role_val": "Freelance Web Dev",
+            "hero.role_sub": "Lead Dev & Coordinator",
+            "hero.stack_label": "Teknologi Utama",
+            "hero.btn_exp": `Lihat Perjalanan <i data-lucide="arrow-right" class="icon-sm ml-2"></i>`,
+            "hero.btn_proj": "Lihat Project",
+            "hero.btn_cv": `CV <i data-lucide="download" class="icon-sm ml-2"></i>`,
+            "hero.scroll": "Scroll Down",
+            "about.sec_label": `<i data-lucide="user" class="icon-sm inline-block mr-2"></i>02 · Tentang`,
+            "about.sec_title": "Tentang Saya",
+            "about.p1": `Saya adalah seorang <strong class="text-white">Web Developer</strong> dan <strong class="text-white">UI/UX Designer</strong> berbasis di Yogyakarta, dengan passion kuat terhadap teknologi dan desain visual.`,
+            "about.p2": `Dengan pengalaman memimpin tim produksi teknis dan proyek pengembangan perangkat lunak, saya terbiasa mengoordinasikan workflow kompleks dan menghasilkan output berkualitas tinggi. Saya percaya bahwa <strong class="text-white">kode yang baik</strong> harusnya seindah desainnya.`,
+            "about.p3": `Saat ini saya telah diterima di <strong class="text-white">Universitas Gadjah Mada (UGM)</strong> untuk <strong class="text-white">S1 Matematika Murni</strong> melalui jalur <span class="text-gradient">SNBP 2026</span>, di mana saya akan mendalami logika matematika dan algoritma yang memperkuat fondasi saya dalam dunia teknologi.`,
+            "about.lbl1": "Pengalaman",
+            "about.desc1": "Tahun Pengalaman",
+            "about.lbl2": "Proyek",
+            "about.desc2": "Project Selesai",
+            "about.lbl3": "Manajemen Tim",
+            "about.desc3": "Tim Dikelola",
+            "about.lbl4": "Penghargaan",
+            "about.desc4": "Penghargaan",
+            "exp.sec_label": `<i data-lucide="briefcase" class="icon-sm inline-block mr-2"></i>03 · Karir &amp; Pendidikan`,
+            "exp.sec_title": "Pengalaman & Pendidikan",
+            "exp.job1_title": "Freelance Web Developer",
+            "exp.job1_sub": "Proyek Pembuatan Website PT (Corporate)",
+            "exp.job1_b1": "Merancang dan membangun website fungsional dengan antarmuka pengguna yang modern khusus untuk kebutuhan perusahaan.",
+            "exp.job1_b2": "Mengelola deployment dan performa serta memastikan responsivitas website agar optimal di berbagai perangkat.",
+            "exp.edu1_title": "S1 Matematika Murni",
+            "exp.edu1_sub": "Universitas Gadjah Mada (UGM), Yogyakarta",
+            "exp.edu1_b1": "Lolos jalur SNBP 2026 — seleksi berbasis prestasi nasional.",
+            "exp.edu1_b2": "Fokus pada logika matematika dan algoritma yang memperkuat fondasi teknologi.",
+            "exp.job2_title": "Lead Technical & Coordinator",
+            "exp.job2_sub": "Multimedia Projects, Yogyakarta",
+            "exp.job2_b1": "Mengarahkan produksi teknis dan pascaproduksi untuk proyek video high-fidelity dan film pendek.",
+            "exp.job2_b2": "Mengelola tim kreatif 12+ orang, mengawasi lini masa produksi, dan memastikan konsistensi visual.",
+            "exp.job3_title": "Lead Developer & Team Coordinator",
+            "exp.job3_sub": "IT Projects, Yogyakarta",
+            "exp.job3_b1": "Mengoordinasikan persyaratan sistem dan distribusi tugas untuk proyek pengembangan perangkat lunak kolaboratif.",
+            "exp.job3_b2": "Memfasilitasi komunikasi antara fase desain dan pengembangan untuk memastikan produk akhir yang lancar.",
+            "exp.job3_b3": "Mengelola kontrol versi dan konfigurasi lingkungan untuk lingkungan pengkodean berbasis tim.",
+            "exp.edu2_title": "MIPA",
+            "exp.edu2_sub": "SMA Negeri 6 Yogyakarta",
+            "exp.edu2_b1": "Fokus pada penguatan dasar Informatika dan Matematika tingkat lanjut.",
+            "skills.sec_label": `<i data-lucide="cpu" class="icon-sm inline-block mr-2"></i>04 · Keahlian`,
+            "skills.sec_title": "Keterampilan Teknis",
+            "skills.mod1": "Modul 01",
+            "skills.mod2": "Modul 02",
+            "skills.mod3": "Modul 03",
+            "skills.lang_title": "Bahasa",
+            "skills.lang1_name": "Bahasa Indonesia",
+            "skills.lang1_lvl": "Native Speaker",
+            "skills.lang2_name": "Bahasa Inggris",
+            "skills.lang2_lvl": "Professional Working",
+            "proj.sec_label": `<i data-lucide="folder-open" class="icon-sm inline-block mr-2"></i>05 · Portofolio &amp; Pencapaian`,
+            "proj.sec_title": "Project Utama & Penghargaan",
+            "proj.banner_tag": `<i data-lucide="film" class="icon-sm"></i>Short Movie — Featured Project`,
+            "proj.desc": "Film pendek produksi tim kreatif dengan visual editing berkualitas tinggi dan storytelling sinematik. Berkontribusi sebagai Asisten Post-Produksi, Dokumentasi, dan Pembuatan Laporan bersama tim 12+ orang.",
+            "proj.role_lbl": "Role",
+            "proj.role_val": "Asisten Post-Produksi",
+            "proj.year_lbl": "Tahun",
+            "proj.team_lbl": "Tim",
+            "proj.team_val": "12+ Orang",
+            "proj.plat_lbl": "Platform",
+            "proj.tag1": "Post-Production",
+            "proj.tag2": "Dokumentasi",
+            "proj.tag3": "Pembuatan Laporan",
+            "proj.btn_watch": `<i data-lucide="play" class="icon-sm mr-2"></i>Tonton ↗`,
+            "proj.badge_featured": "Unggulan",
+            "proj.corporate_head": `<i data-lucide="building-2" class="icon-sm mr-2 inline-block"></i>Klien Corporate &amp; Proyek Industri`,
+            "proj.client_tag": "Corporate Client",
+            "proj.client1_role": "Pembuatan &amp; Pengembangan Website Perusahaan (Corporate Website Development)",
+            "proj.client1_desc": "Mengembangkan website resmi perusahaan transportasi &amp; logistik dengan tata letak responsif, performa tinggi, dan antarmuka bisnis yang profesional.",
+            "proj.client1_btn": `Kunjungi Website <i data-lucide="external-link" class="icon-sm ml-2"></i>`,
+            "proj.awards_head": `<i data-lucide="award" class="icon-sm mr-2 inline-block"></i>Pencapaian &amp; Penghargaan`,
+            "proj.awd1_title": "Finalis OSN-P Informatika",
+            "proj.awd1_desc": "Kompetitor tingkat regional dalam pemecahan masalah algoritma dan pemrograman kompetitif.",
+            "proj.awd2_title": "Participant Omah TI Academy 2026",
+            "proj.awd2_desc": "Berkompetisi dalam ajang teknologi informasi bergengsi di Universitas Gadjah Mada.",
+            "proj.awd3_title": "Lolos SNBP UGM",
+            "proj.awd3_desc": "Diterima di Universitas Gadjah Mada melalui jalur prestasi nasional (SNBP 2026) untuk program Matematika Murni.",
+            "footer.sub": "Web Developer &amp; UI/UX Designer<br>Pure Mathematics, UGM · Yogyakarta",
+            "footer.contact_email": "Email",
+            "footer.contact_loc": "Lokasi",
+            "footer.loc_val": "Yogyakarta, Indonesia",
+            "footer.contact_gh": "GitHub",
+            "footer.closing_title": "Kata Penutup",
+            "footer.quote": "Menggabungkan<br>Logika Matematika<br>Dengan Desain Kreatif.",
+            "footer.btn_contact": `<i data-lucide="mail" class="icon-sm mr-2"></i>Hubungi Saya`,
+            "footer.btn_cv": `Unduh CV <i data-lucide="download" class="icon-sm ml-2"></i>`
+        },
+        en: {
+            "nav.about": "About",
+            "nav.experience": "Experience",
+            "nav.skills": "Skills",
+            "nav.projects": "Portfolio",
+            "nav.contact": "Contact Me",
+            "preloader.label": "Loading Portfolio...",
+            "hero.sub": "Web Developer & UI/UX Designer",
+            "hero.desc": "Combining mathematical logic with creative design to build elegant and impactful digital solutions.",
+            "hero.edu1_label": "Education — University",
+            "hero.edu1_val": "B.Sc. in Pure Mathematics",
+            "hero.edu1_sub": "Gadjah Mada University — SNBP 2026",
+            "hero.edu2_label": "Education — High School",
+            "hero.edu2_val": "Natural Sciences",
+            "hero.edu2_sub": "SMAN 6 Yogyakarta — Jul 2023 – Jun 2026",
+            "hero.stats_label": "Quick Stats",
+            "hero.stat1_lbl": "Yrs Exp",
+            "hero.stat2_lbl": "Projects",
+            "hero.stat3_lbl": "Teams",
+            "hero.status_label": "Status",
+            "hero.status_val": `<span class="status-dot"></span> Open to Opportunities`,
+            "hero.role_label": "Current Role",
+            "hero.role_val": "Freelance Web Dev",
+            "hero.role_sub": "Lead Dev & Coordinator",
+            "hero.stack_label": "Core Stack",
+            "hero.btn_exp": `View Journey <i data-lucide="arrow-right" class="icon-sm ml-2"></i>`,
+            "hero.btn_proj": "View Projects",
+            "hero.btn_cv": `CV <i data-lucide="download" class="icon-sm ml-2"></i>`,
+            "hero.scroll": "Scroll Down",
+            "about.sec_label": `<i data-lucide="user" class="icon-sm inline-block mr-2"></i>02 · About`,
+            "about.sec_title": "About Me",
+            "about.p1": `I am a <strong class="text-white">Web Developer</strong> and <strong class="text-white">UI/UX Designer</strong> based in Yogyakarta, driven by a passion for technology and visual design.`,
+            "about.p2": `With experience leading technical production teams and software development projects, I excel at coordinating complex workflows to deliver high-quality outputs. I believe that <strong class="text-white">great code</strong> should be as elegant as its design.`,
+            "about.p3": `Currently admitted to <strong class="text-white">Gadjah Mada University (UGM)</strong> for a <strong class="text-white">B.Sc. in Pure Mathematics</strong> through <span class="text-gradient">SNBP 2026</span>, where I deepen mathematical logic and algorithms that strengthen my tech foundation.`,
+            "about.lbl1": "Experience",
+            "about.desc1": "Years Experience",
+            "about.lbl2": "Projects",
+            "about.desc2": "Projects Completed",
+            "about.lbl3": "Team Management",
+            "about.desc3": "Teams Managed",
+            "about.lbl4": "Awards",
+            "about.desc4": "Awards Received",
+            "exp.sec_label": `<i data-lucide="briefcase" class="icon-sm inline-block mr-2"></i>03 · Career &amp; Education`,
+            "exp.sec_title": "Experience & Education",
+            "exp.job1_title": "Freelance Web Developer",
+            "exp.job1_sub": "Corporate Website Development Projects",
+            "exp.job1_b1": "Architecting and engineering functional websites with modern user interfaces tailored specifically for corporate clients.",
+            "exp.job1_b2": "Managing deployment, site performance, and ensuring cross-device responsiveness for optimal user experience.",
+            "exp.edu1_title": "B.Sc. in Pure Mathematics",
+            "exp.edu1_sub": "Gadjah Mada University (UGM), Yogyakarta",
+            "exp.edu1_b1": "Admitted via SNBP 2026 — competitive national merit selection.",
+            "exp.edu1_b2": "Focusing on mathematical logic and algorithms that fortify technological foundations.",
+            "exp.job2_title": "Lead Technical & Coordinator",
+            "exp.job2_sub": "Multimedia Projects, Yogyakarta",
+            "exp.job2_b1": "Directing technical production and post-production for high-fidelity video projects and cinematic short films.",
+            "exp.job2_b2": "Managing a creative team of 12+ members, supervising production schedules, and maintaining visual style consistency.",
+            "exp.job3_title": "Lead Developer & Team Coordinator",
+            "exp.job3_sub": "IT Projects, Yogyakarta",
+            "exp.job3_b1": "Coordinating system requirements and task distribution for collaborative software engineering projects.",
+            "exp.job3_b2": "Facilitating seamless communication between design and engineering phases to ensure flawless product delivery.",
+            "exp.job3_b3": "Managing version control systems and environment configurations for team coding environments.",
+            "exp.edu2_title": "Natural Sciences (MIPA)",
+            "exp.edu2_sub": "SMA Negeri 6 Yogyakarta",
+            "exp.edu2_b1": "Focused on reinforcing core Informatics and advanced Mathematics capabilities.",
+            "skills.sec_label": `<i data-lucide="cpu" class="icon-sm inline-block mr-2"></i>04 · Skills`,
+            "skills.sec_title": "Technical Skills",
+            "skills.mod1": "Module 01",
+            "skills.mod2": "Module 02",
+            "skills.mod3": "Module 03",
+            "skills.lang_title": "Languages",
+            "skills.lang1_name": "Indonesian",
+            "skills.lang1_lvl": "Native Speaker",
+            "skills.lang2_name": "English",
+            "skills.lang2_lvl": "Professional Working",
+            "proj.sec_label": `<i data-lucide="folder-open" class="icon-sm inline-block mr-2"></i>05 · Portfolio &amp; Achievements`,
+            "proj.sec_title": "Featured Project & Awards",
+            "proj.banner_tag": `<i data-lucide="film" class="icon-sm"></i>Short Movie — Featured Project`,
+            "proj.desc": "A creative short film featuring high-fidelity visual editing and cinematic storytelling. Contributed as Post-Production Assistant, Documentation Lead, and Report Specialist within a 12+ member team.",
+            "proj.role_lbl": "Role",
+            "proj.role_val": "Post-Production Assistant",
+            "proj.year_lbl": "Year",
+            "proj.team_lbl": "Team",
+            "proj.team_val": "12+ Members",
+            "proj.plat_lbl": "Platform",
+            "proj.tag1": "Post-Production",
+            "proj.tag2": "Documentation",
+            "proj.tag3": "Reporting",
+            "proj.btn_watch": `<i data-lucide="play" class="icon-sm mr-2"></i>Watch Movie ↗`,
+            "proj.badge_featured": "Featured",
+            "proj.corporate_head": `<i data-lucide="building-2" class="icon-sm mr-2 inline-block"></i>Corporate Clients &amp; Industry Projects`,
+            "proj.client_tag": "Corporate Client",
+            "proj.client1_role": "Corporate Website Development &amp; Engineering",
+            "proj.client1_desc": "Engineered official corporate portal for logistics &amp; transport firm with responsive layouts, high performance, and professional business interface.",
+            "proj.client1_btn": `Visit Website <i data-lucide="external-link" class="icon-sm ml-2"></i>`,
+            "proj.awards_head": `<i data-lucide="award" class="icon-sm mr-2 inline-block"></i>Milestones &amp; Awards`,
+            "proj.awd1_title": "OSN-P Informatics Finalist",
+            "proj.awd1_desc": "Regional competitor in algorithmic problem solving and competitive programming.",
+            "proj.awd2_title": "Omah TI Academy 2026 Participant",
+            "proj.awd2_desc": "Competed in prestigious information technology programs at Gadjah Mada University.",
+            "proj.awd3_title": "Admitted to UGM via SNBP",
+            "proj.awd3_desc": "Accepted into Gadjah Mada University through national academic achievement route (SNBP 2026) for Pure Mathematics.",
+            "footer.sub": "Web Developer &amp; UI/UX Designer<br>Pure Mathematics, UGM · Yogyakarta",
+            "footer.contact_email": "Email",
+            "footer.contact_loc": "Location",
+            "footer.loc_val": "Yogyakarta, Indonesia",
+            "footer.contact_gh": "GitHub",
+            "footer.closing_title": "Closing Thoughts",
+            "footer.quote": "Combining<br>Mathematical Logic<br>With Creative Design.",
+            "footer.btn_contact": `<i data-lucide="mail" class="icon-sm mr-2"></i>Contact Me`,
+            "footer.btn_cv": `Download CV <i data-lucide="download" class="icon-sm ml-2"></i>`
+        }
+    };
+
+    function setLanguage(lang) {
+        if (!translations[lang]) return;
+
+        localStorage.setItem('preferred_lang', lang);
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang-set') === lang);
+        });
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang][key] !== undefined) {
+                el.textContent = translations[lang][key];
+            }
+        });
+
+        document.querySelectorAll('[data-i18n-html]').forEach(el => {
+            const key = el.getAttribute('data-i18n-html');
+            if (translations[lang][key] !== undefined) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang-set');
+            setLanguage(lang);
+        });
+    });
+
+    const savedLang = localStorage.getItem('preferred_lang') || 'id';
+    if (savedLang !== 'id') {
+        setLanguage(savedLang);
+    }
+
 });
