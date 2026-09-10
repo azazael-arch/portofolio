@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })();
 
         const interactables = document.querySelectorAll(
-            'a, button, .hero-float-card, .award-cin-item, .skill-card-cin, .featured-project-banner, .btn'
+            'a, button, .hero-float-card, .award-cin-item, .skill-card-cin, .featured-project-banner, .sf-card, .gallery-item, .btn, .lightbox-close, .lightbox-nav'
         );
         interactables.forEach(el => {
             el.addEventListener('mouseenter', () => {
@@ -420,6 +420,100 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ─────────────────────────────────────────────
+    // SMARTFINANCE CARD — subtle image parallax on hover
+    // ─────────────────────────────────────────────
+    const sfCard  = document.querySelector('.sf-card');
+    const sfImg   = sfCard?.querySelector('.sf-card-img');
+    if (sfCard && sfImg) {
+        sfCard.addEventListener('mousemove', (e) => {
+            const rect = sfCard.getBoundingClientRect();
+            const x    = (e.clientX - rect.left) / rect.width  - 0.5;
+            const y    = (e.clientY - rect.top)  / rect.height - 0.5;
+            sfImg.style.transform = `scale(1.06) translate(${x * 12}px, ${y * 8}px)`;
+        });
+        sfCard.addEventListener('mouseleave', () => {
+            sfImg.style.transform = 'scale(1) translate(0, 0)';
+        });
+    }
+
+    // ─────────────────────────────────────────────
+    // PHOTO GALLERY — LIGHTBOX / MODAL
+    // ─────────────────────────────────────────────
+    const lightbox       = document.getElementById('lightbox');
+    const lightboxImg    = document.getElementById('lightboxImg');
+    const lightboxClose  = document.getElementById('lightboxClose');
+    const lightboxPrev   = document.getElementById('lightboxPrev');
+    const lightboxNext   = document.getElementById('lightboxNext');
+    const lightboxCounter = document.getElementById('lightboxCounter');
+    const galleryItems   = document.querySelectorAll('.gallery-item');
+    let currentIndex     = 0;
+    const gallerySrcs    = [];
+
+    // Collect all gallery image sources
+    galleryItems.forEach((item, index) => {
+        const img = item.querySelector('img');
+        if (img) gallerySrcs.push(img.src);
+
+        item.addEventListener('click', () => {
+            currentIndex = index;
+            openLightbox();
+        });
+    });
+
+    function openLightbox() {
+        if (!lightbox || gallerySrcs.length === 0) return;
+        lightboxImg.src = gallerySrcs[currentIndex];
+        lightboxCounter.textContent = `${currentIndex + 1} / ${gallerySrcs.length}`;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+
+    function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function navigateLightbox(direction) {
+        currentIndex = (currentIndex + direction + gallerySrcs.length) % gallerySrcs.length;
+        lightboxImg.src = gallerySrcs[currentIndex];
+        lightboxCounter.textContent = `${currentIndex + 1} / ${gallerySrcs.length}`;
+        // Subtle scale animation on navigate
+        lightboxImg.style.transform = 'scale(0.95)';
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                lightboxImg.style.transform = 'scale(1)';
+            });
+        });
+    }
+
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+    }
+
+    if (lightboxPrev) {
+        lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
+    }
+
+    if (lightboxNext) {
+        lightboxNext.addEventListener('click', () => navigateLightbox(1));
+    }
+
+    // Close on backdrop click
+    if (lightbox) {
+        lightbox.querySelector('.lightbox-backdrop')?.addEventListener('click', closeLightbox);
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox?.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') navigateLightbox(-1);
+        if (e.key === 'ArrowRight') navigateLightbox(1);
+    });
+
+    // ─────────────────────────────────────────────
     // AWARD ITEMS — stagger reveal on scroll
     // ─────────────────────────────────────────────
     const awardItems = document.querySelectorAll('.award-cin-item');
@@ -560,7 +654,21 @@ document.addEventListener('DOMContentLoaded', () => {
             "footer.closing_title": "Kata Penutup",
             "footer.quote": "Menggabungkan<br>Logika Matematika<br>Dengan Desain Kreatif.",
             "footer.btn_contact": `<i data-lucide="mail" class="icon-sm mr-2"></i>Hubungi Saya`,
-            "footer.btn_cv": `Unduh CV <i data-lucide="download" class="icon-sm ml-2"></i>`
+            "footer.btn_cv": `Unduh CV <i data-lucide="download" class="icon-sm ml-2"></i>`,
+            // Navigation - Gallery
+            "nav.gallery": "Galeri",
+            // SmartFinance Showcase
+            "proj.sf_head": `<i data-lucide="layout-dashboard" class="icon-sm mr-2 inline-block"></i>Web App Project`,
+            "proj.sf_tag": `<i data-lucide="wallet" class="icon-sm"></i>Aplikasi Web — Keuangan`,
+            "proj.sf_desc": "Platform manajemen keuangan pribadi & bisnis modern dengan dashboard interaktif, analitik visual Chart.js, dan antarmuka responsif yang siap dikustomisasi.",
+            "proj.sf_type_lbl": "Tipe",
+            "proj.sf_year_lbl": "Tahun",
+            "proj.sf_btn": `<i data-lucide="external-link" class="icon-sm mr-2"></i>Live Demo ↗`,
+            "proj.sf_badge": "Proyek",
+            // Photo Gallery
+            "gallery.sec_label": `<i data-lucide="camera" class="icon-sm inline-block mr-2"></i>06 · Galeri Foto`,
+            "gallery.sec_title": "Galeri Foto",
+            "gallery.view": "Lihat Foto"
         },
         en: {
             "nav.about": "About",
@@ -671,7 +779,21 @@ document.addEventListener('DOMContentLoaded', () => {
             "footer.closing_title": "Closing Thoughts",
             "footer.quote": "Combining<br>Mathematical Logic<br>With Creative Design.",
             "footer.btn_contact": `<i data-lucide="mail" class="icon-sm mr-2"></i>Contact Me`,
-            "footer.btn_cv": `Download CV <i data-lucide="download" class="icon-sm ml-2"></i>`
+            "footer.btn_cv": `Download CV <i data-lucide="download" class="icon-sm ml-2"></i>`,
+            // Navigation - Gallery
+            "nav.gallery": "Gallery",
+            // SmartFinance Showcase
+            "proj.sf_head": `<i data-lucide="layout-dashboard" class="icon-sm mr-2 inline-block"></i>Web App Project`,
+            "proj.sf_tag": `<i data-lucide="wallet" class="icon-sm"></i>Web Application — Finance`,
+            "proj.sf_desc": "A modern personal & business finance management platform with interactive dashboard, Chart.js visual analytics, and responsive interface ready for customization.",
+            "proj.sf_type_lbl": "Type",
+            "proj.sf_year_lbl": "Year",
+            "proj.sf_btn": `<i data-lucide="external-link" class="icon-sm mr-2"></i>Live Demo ↗`,
+            "proj.sf_badge": "Project",
+            // Photo Gallery
+            "gallery.sec_label": `<i data-lucide="camera" class="icon-sm inline-block mr-2"></i>06 · Photo Gallery`,
+            "gallery.sec_title": "Photo Gallery",
+            "gallery.view": "View Photo"
         }
     };
 
